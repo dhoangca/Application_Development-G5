@@ -16,4 +16,16 @@ class DisplayController extends Controller
     {
         return view('Contents.Dashboard');
     }
+    public function notifications()
+    {
+        return view('Contents.notifications');
+    }
+    public function tables()
+    {
+        return view('Contents.tables');
+    }
+    public function user()
+    {
+        return view('Contents.user');
+    }
 }
