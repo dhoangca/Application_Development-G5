@@ -17,7 +17,8 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="active ">
-                    <a href="./dashboard.html">
+                    <a href="{{ asset('All/dashboard') }}">
+                    {{-- <a href="./dashboard.html"> --}}
                         <i class="nc-icon nc-bank"></i>
                         <p>Dashboard</p>
                     </a>
@@ -35,19 +36,22 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./notifications.html">
+                    <a href="{{ asset('All/notifications') }}">
+                    {{-- <a href="./notifications.html"> --}}
                         <i class="nc-icon nc-bell-55"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./user.html">
+                    <a href="{{ asset('All/user') }}">
+                    {{-- <a href="./user.html"> --}}
                         <i class="nc-icon nc-single-02"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./tables.html">
+                    <a href="{{ asset('All/tables') }}">
+                    {{-- <a href="./tables.html"> --}}
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Table List</p>
                     </a>
