@@ -51,7 +51,6 @@
                 </li>
                 <li>
                     <a href="{{ asset('All/tables') }}">
-                    {{-- <a href="./tables.html"> --}}
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Table List</p>
                     </a>
