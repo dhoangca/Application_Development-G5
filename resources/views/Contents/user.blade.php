@@ -12,12 +12,12 @@
       <div class="col-md-4">
         <div class="card card-user">
           <div class="image">
-            <img src="../assets/img/damir-bosnjak.jpg" alt="...">
+            <img src="img/damir-bosnjak.jpg" alt="...">
           </div>
           <div class="card-body">
             <div class="author">
               <a href="#">
-                <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+                <img class="avatar border-gray" src="img/mike.jpg" alt="...">
                 <h5 class="title">Chet Faker</h5>
               </a>
               <p class="description">
@@ -57,7 +57,7 @@
                 <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar">
-                      <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-md-7 col-7">
@@ -74,7 +74,7 @@
                 <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar">
-                      <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-md-7 col-7">
@@ -91,7 +91,7 @@
                 <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar">
-                      <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-ms-7 col-7">
