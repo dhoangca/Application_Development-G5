@@ -19,16 +19,16 @@
               <table class="table">
                 <thead class=" text-primary">
                   <th>
-                    Name
+                    uId	
                   </th>
                   <th>
-                    Country
+                    username
                   </th>
                   <th>
-                    City
+                    email
                   </th>
                   <th class="text-right">
-                    Salary
+                    role	
                   </th>
                 </thead>
                 <tbody>
