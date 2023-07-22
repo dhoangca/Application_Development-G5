@@ -17,15 +17,16 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="active ">
-                    <a href="./dashboard.html">
+                    <a href="<?php echo e(asset('All/dashboard')); ?>">
+                    
                         <i class="nc-icon nc-bank"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./icons.html">
+                    <a href="<?php echo e(asset('/users')); ?>">
                         <i class="nc-icon nc-diamond"></i>
-                        <p>Icons</p>
+                        <p>Account user management</p>
                     </a>
                 </li>
                 <li>
@@ -35,35 +36,43 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./notifications.html">
+                    <a href="<?php echo e(asset('All/notifications')); ?>">
+                    
                         <i class="nc-icon nc-bell-55"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./user.html">
+                    <a href="<?php echo e(asset('All/user')); ?>">
+                    
                         <i class="nc-icon nc-single-02"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./tables.html">
+                    <a href="<?php echo e(asset('All/tables')); ?>">
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Table List</p>
                     </a>
                 </li>
+                <!-- Dropdown Menu -->
+                
+                
+                         <!-- End of Dropdown Menu -->
+                    <li>
+                        <a href="./typography.html">
+                            <i class="nc-icon nc-caps-small"></i>
+                            <p>Typography</p>
+                        </a>
+                    </li>
+                 
                 <li>
-                    <a href="./typography.html">
-                        <i class="nc-icon nc-caps-small"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li class="active-pro">
                     <a href="./upgrade.html">
                         <i class="nc-icon nc-spaceship"></i>
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
+            
             </ul>
         </div>
     </div>

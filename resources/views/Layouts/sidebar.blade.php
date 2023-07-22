@@ -17,15 +17,16 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="active ">
-                    <a href="./dashboard.html">
+                    <a href="{{ asset('All/dashboard') }}">
+                    {{-- <a href="./dashboard.html"> --}}
                         <i class="nc-icon nc-bank"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./icons.html">
+                    <a href="{{ asset('/users')}}">
                         <i class="nc-icon nc-diamond"></i>
-                        <p>Icons</p>
+                        <p>Account user management</p>
                     </a>
                 </li>
                 <li>
@@ -35,35 +36,55 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./notifications.html">
+                    <a href="{{ asset('All/notifications') }}">
+                    {{-- <a href="./notifications.html"> --}}
                         <i class="nc-icon nc-bell-55"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./user.html">
+                    <a href="{{ asset('All/user') }}">
+                    {{-- <a href="./user.html"> --}}
                         <i class="nc-icon nc-single-02"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./tables.html">
+                    <a href="{{ asset('All/tables') }}">
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Table List</p>
                     </a>
                 </li>
-                <li>
-                    <a href="./typography.html">
-                        <i class="nc-icon nc-caps-small"></i>
-                        <p>Typography</p>
+                <!-- Dropdown Menu -->
+                {{-- <li class="nav-item btn-rotate dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nc-icon nc-diamond"></i></i> <!-- New user icon -->
+                        <p>
+                            Account user management
+                        </p>
                     </a>
-                </li>
-                <li class="active-pro">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ asset('/users/create') }}">Add</a>
+                        <a class="dropdown-item" href="{{ asset('/users') }}">List</a>
+                    </div>
+                </li> --}}
+                
+                         <!-- End of Dropdown Menu -->
+                    <li>
+                        <a href="./typography.html">
+                            <i class="nc-icon nc-caps-small"></i>
+                            <p>Typography</p>
+                        </a>
+                    </li>
+                 
+                <li>
                     <a href="./upgrade.html">
                         <i class="nc-icon nc-spaceship"></i>
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
+            
             </ul>
         </div>
     </div>
