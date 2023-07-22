@@ -28,4 +28,5 @@ class DisplayController extends Controller
     {
         return view('Contents.user');
     }
+
 }
