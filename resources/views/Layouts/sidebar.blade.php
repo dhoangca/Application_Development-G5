@@ -24,9 +24,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./icons.html">
+                    <a href="{{ asset('/users')}}">
                         <i class="nc-icon nc-diamond"></i>
-                        <p>Icons</p>
+                        <p>Account user management</p>
                     </a>
                 </li>
                 <li>
@@ -55,18 +55,36 @@
                         <p>Table List</p>
                     </a>
                 </li>
-                <li>
-                    <a href="./typography.html">
-                        <i class="nc-icon nc-caps-small"></i>
-                        <p>Typography</p>
+                <!-- Dropdown Menu -->
+                {{-- <li class="nav-item btn-rotate dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nc-icon nc-diamond"></i></i> <!-- New user icon -->
+                        <p>
+                            Account user management
+                        </p>
                     </a>
-                </li>
-                <li class="active-pro">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ asset('/users/create') }}">Add</a>
+                        <a class="dropdown-item" href="{{ asset('/users') }}">List</a>
+                    </div>
+                </li> --}}
+                
+                         <!-- End of Dropdown Menu -->
+                    <li>
+                        <a href="./typography.html">
+                            <i class="nc-icon nc-caps-small"></i>
+                            <p>Typography</p>
+                        </a>
+                    </li>
+                 
+                <li>
                     <a href="./upgrade.html">
                         <i class="nc-icon nc-spaceship"></i>
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
+            
             </ul>
         </div>
     </div>

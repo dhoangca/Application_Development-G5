@@ -143,8 +143,8 @@
                             </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Sign UP</a>
-                            <a class="dropdown-item" href="#">Sign IN</a>
+                            <a class="dropdown-item" href="{{ asset('Vip/register') }}">Sign UP</a>
+                            <a class="dropdown-item" href="{{ asset('Vip/login') }}">Sign IN</a>
                             <a class="dropdown-item" href="#">Log out</a>
                         </div>
                     </li>
