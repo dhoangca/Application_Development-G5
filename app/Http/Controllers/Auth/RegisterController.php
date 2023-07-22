@@ -19,8 +19,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'id' => ['required', 'string', 'max:255', 'unique:users'],
-            'name' => ['required', 'string', 'max:255'],
+            // 'id' => ['required', 'string', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'role' => ['required', 'in:admin,Training Staff,Trainer'],
@@ -36,8 +36,8 @@ class RegisterController extends Controller
         }
 
         $user = new User();
-        $user->id = $request->input('id');
-        $user->name = $request->input('name');
+        // $user->id = $request->input('id');
+        $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
         $user->role = $request->input('role');
@@ -45,6 +45,6 @@ class RegisterController extends Controller
 
         // After successful registration, log in the user and redirect to the dashboard
         Auth::login($user);
-        return redirect()->route('dashboard')->with('success', 'Registration successful!'); // Replace 'dashboard' with the desired route name for the dashboard page
+        return redirect()->route('Vip.login')->with('success', 'Registration successful!'); // Replace 'dashboard' with the desired route name for the dashboard page
     }
 }

@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <div class="main-panel">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -59,6 +65,20 @@
                                 <span class="d-lg-none d-md-block">Account</span>
                             </p>
                         </a>
+                    </li>
+                    <li class="nav-item btn-rotate dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="nc-icon nc-single-02"></i> <!-- New user icon -->
+                            <p>
+                                <span class="d-lg-none d-md-block">Account</span>
+                            </p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?php echo e(asset('Vip/register')); ?>">Sign UP</a>
+                            <a class="dropdown-item" href="<?php echo e(asset('Vip/login')); ?>">Sign IN</a>
+                            <a class="dropdown-item" href="#">Log out</a>
+                        </div>
                     </li>
                 </ul>
             </div>

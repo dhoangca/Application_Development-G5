@@ -25,7 +25,7 @@ Route::prefix('All')->name('All.')->group(function()
     Route::get('tables', [DisplayController::class, 'tables'])->name('tables');
     Route::get('user', [DisplayController::class, 'user'])->name('user');
 });
-
+// login and register 
 Route::prefix('Vip')->name('Vip.')->group(function () {
     // GET route to display the registration form
     Route::get('/register', [RegisterController::class, 'signup'])->name('register');
