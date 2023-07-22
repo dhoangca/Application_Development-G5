@@ -21,8 +21,11 @@ Route::get('/', [DisplayController::class, 'index'])->name('index');
 Route::prefix('All')->name('All.')->group(function()
 {
     Route::get('dashboard', [DisplayController::class, 'dashboard'])->name('Dashboard');
+
     Route::get('notifications', [DisplayController::class, 'notifications'])->name('notifications');
+
     Route::get('tables', [DisplayController::class, 'tables'])->name('tables');
+    
     Route::get('user', [DisplayController::class, 'user'])->name('user');
 });
 // login and register 
