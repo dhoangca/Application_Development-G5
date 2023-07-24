@@ -1,7 +1,7 @@
 @include('Layouts.header')
 
 <!-- sidebar -->
-@include('Layouts.sidebar')
+@include('Layouts.sidebarAdmin')
 
 <!-- navbar -->
 @include('Layouts.navbar')
