@@ -56,7 +56,19 @@
                     </a>
                 </li>
                 <!-- Dropdown Menu -->
-                
+                <li class="nav-item btn-rotate dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        
+                        <p>
+                            Account user management
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="<?php echo e(asset('/users/create')); ?>">Add</a>
+                        <a class="dropdown-item" href="<?php echo e(asset('/users')); ?>">List</a>
+                    </div>
+                </li>
                 
                          <!-- End of Dropdown Menu -->
                     <li>

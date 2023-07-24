@@ -16,39 +16,48 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', [DisplayController::class, 'index'])->name('index');
+Route::get('/', [DisplayController::class, 'welcome'])->name('welcome');
 
-Route::prefix('All')->name('All.')->group(function()
+Route::prefix('All')->name('All.')->group(function () 
 {
-    Route::get('dashboard', [DisplayController::class, 'dashboard'])->name('Dashboard');
+    // Route index by role
+    Route::group(['prefix' => 'InRole'], function () {
 
-    Route::get('notifications', [DisplayController::class, 'notifications'])->name('notifications');
+        Route::get('indexA/', [DisplayController::class, 'indexAdmin'])->name('index.admin');
 
-    Route::get('tables', [DisplayController::class, 'tables'])->name('tables');
-    
-    Route::get('user', [DisplayController::class, 'user'])->name('user');
+        Route::get('indexTing/', [DisplayController::class, 'indexTraining'])->name('index.training');
+
+        Route::get('indexTer/', [DisplayController::class, 'indexTrainer'])->name('index.trainer');
+    });
+
+    Route::get('dashboard/', [DisplayController::class, 'dashboard'])->name('Dashboard');
+
+    Route::get('notifications/', [DisplayController::class, 'notifications'])->name('notifications');
+
+    Route::get('tables/', [DisplayController::class, 'tables'])->name('tables');
+
+    Route::get('user/', [DisplayController::class, 'user'])->name('user');
 });
+
 // login and register 
 Route::prefix('Vip')->name('Vip.')->group(function () {
     // GET route to display the registration form
-    Route::get('/register', [RegisterController::class, 'signup'])->name('register');
+    Route::get('register/', [RegisterController::class, 'signup'])->name('register');
 
     // POST route to handle the registration form submission
-    Route::post('/register', [RegisterController::class, 'create'])->name('postRegister');
+    Route::post('register/', [RegisterController::class, 'create'])->name('postRegister');
 
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::get('login/', [LoginController::class, 'showLoginForm'])->name('login');
 
     // POST route to handle the login form submission
-    Route::post('/login', [LoginController::class, 'login'])->name('postLogin');
-    
-    
+    Route::post('login/', [LoginController::class, 'login'])->name('postLogin');
 });
 
 // Route::prefix('Vip')->name('Vip.')->group(function()
 // {
-    // Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    // Route::post('/register', 'Auth\RegisterController@register');
-    
+// Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('/register', 'Auth\RegisterController@register');
+
 // });
 
 // Route::middleware([])->group(function () {
@@ -61,11 +70,6 @@ Route::prefix('Vip')->name('Vip.')->group(function () {
 //     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 //     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 // });
-
-
-
-// web.php
-
 
 Route::middleware([])->group(function () {
     // User Management

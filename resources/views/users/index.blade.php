@@ -1,7 +1,7 @@
 {{-- index.blade.php --}}
 @include('layouts.header')
 
-@include('layouts.sidebar')
+@include('Layouts.sidebarAdmin')
 
 @include('layouts.navbar')
 {{-- start --}}
