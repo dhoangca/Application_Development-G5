@@ -24,11 +24,11 @@ class LoginController extends Controller
             // Redirect based on the user's role
             switch ($user->role) {
                 case 'admin':
-                    return redirect()->route('admin.dashboard');
-                case 'training_staff':
-                    return redirect()->route('training_staff.dashboard');
+                    return redirect()->route('All.index.admin');
+                case 'training':
+                    return redirect()->route('All.index.training');
                 case 'trainer':
-                    return redirect()->route('trainer.dashboard');
+                    return redirect()->route('All.index.trainer');
                     // Add more cases for other roles if needed
                 default:
                     // Redirect to a default page or dashboard if role not matched
@@ -36,7 +36,7 @@ class LoginController extends Controller
             }
         } else {
             // Authentication failed, redirect back to login with error message
-            return redirect()->route('vip.login')->with('error', 'Invalid username or password');
+            return redirect()->route('Vip.login')->with('error', 'Invalid username or password');
         }
     }
 }
