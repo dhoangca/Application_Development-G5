@@ -40,17 +40,17 @@ Route::prefix('All')->name('All.')->group(function ()
 });
 
 // login and register 
-Route::prefix('Vip')->name('Vip.')->group(function () {
+Route::prefix('Auth')->name('Auth.')->group(function () {
     // GET route to display the registration form
-    Route::get('register/', [RegisterController::class, 'signup'])->name('register');
+    Route::get('register/', [RegisterController::class, 'getRegister'])->name('getRegister');
 
     // POST route to handle the registration form submission
-    Route::post('register/', [RegisterController::class, 'create'])->name('postRegister');
+    Route::post('register/', [RegisterController::class, 'postRegister'])->name('postRegister');
 
-    Route::get('login/', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::get('login/', [LoginController::class, 'getLogin'])->name('getLogin');
 
     // POST route to handle the login form submission
-    Route::post('login/', [LoginController::class, 'login'])->name('postLogin');
+    Route::post('login/', [LoginController::class, 'postLogin'])->name('postLogin');
 });
 
 // Route::prefix('Vip')->name('Vip.')->group(function()

@@ -18,7 +18,7 @@
                 </div>
             @endif
 
-            <form class="login100-form validate-form" method="POST" action="{{ route('Vip.postRegister') }}">
+            <form class="login100-form validate-form" method="POST" action="{{ route('Auth.postRegister') }}">
                 @csrf
                 <span class="login100-form-title p-b-43">
                     Register an account
@@ -33,7 +33,7 @@
                 </div>                
 
                 <div class="wrap-input100 validate-input" data-validate="Email is required">
-                    <input class="input100" type="text" name="email" value="{{ old('email') }}" required>
+                    <input class="input100" type="email" name="email" value="{{ old('email') }}" required>
                     <span class="focus-input100"></span>
                     @if (!old('email'))
                         <span class="label-input100">Email</span>
@@ -57,15 +57,15 @@
                     <label for="role">Role</label>
                     <select name="role" id="role" class="form-control" required>
                         <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="Training Staff" {{ old('role') === 'Training Staff' ? 'selected' : '' }}>Training
+                        <option value="Training Staff" {{ old('role') === 'training' ? 'selected' : '' }}>Training
                             Staff</option>
-                        <option value="Trainer" {{ old('role') === 'Trainer' ? 'selected' : '' }}>Trainer</option>
+                        <option value="Trainer" {{ old('role') === 'trainer' ? 'selected' : '' }}>Trainer</option>
                     </select>
                 </div>
                 <!-- Add any additional fields you want to include in the registration form -->
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
                         Register
                     </button>
                 </div>
