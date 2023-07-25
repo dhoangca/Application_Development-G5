@@ -1,43 +1,39 @@
-@include('Layouts.logheader')
+<?php echo $__env->make('Layouts.logheader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
-            {{-- @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif --}}
-            @if ($errors->any())
+            
+            <?php if($errors->any()): ?>
                 <div class="alert alert-danger">
                     <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-            @endif
+            <?php endif; ?>
 
-            <form class="login100-form validate-form" method="POST" action="{{ route('Auth.postRegister') }}">
-                @csrf
+            <form class="login100-form validate-form" method="POST" action="<?php echo e(route('Auth.postRegister')); ?>">
+                <?php echo csrf_field(); ?>
                 <span class="login100-form-title p-b-43">
                     Register an account
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" name="username" value="{{ old('username') }}" required>
+                    <input class="input100" type="text" name="username" value="<?php echo e(old('username')); ?>" required>
                     <span class="focus-input100"></span>
-                    @if (!old('username'))
+                    <?php if(!old('username')): ?>
                         <span class="label-input100">User name</span>
-                    @endif
+                    <?php endif; ?>
                 </div>                
 
                 <div class="wrap-input100 validate-input" data-validate="Email is required">
-                    <input class="input100" type="email" name="email" value="{{ old('email') }}" required>
+                    <input class="input100" type="email" name="email" value="<?php echo e(old('email')); ?>" required>
                     <span class="focus-input100"></span>
-                    @if (!old('email'))
+                    <?php if(!old('email')): ?>
                         <span class="label-input100">Email</span>
-                    @endif
+                    <?php endif; ?>
                 </div>                
 
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
@@ -56,10 +52,10 @@
                 <div class="form-group">
                     <label for="role">Role</label>
                     <select name="role" id="role" class="form-control" required>
-                        <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="Training Staff" {{ old('role') === 'training' ? 'selected' : '' }}>Training
+                        <option value="admin" <?php echo e(old('role') === 'admin' ? 'selected' : ''); ?>>Admin</option>
+                        <option value="Training Staff" <?php echo e(old('role') === 'training' ? 'selected' : ''); ?>>Training
                             Staff</option>
-                        <option value="Trainer" {{ old('role') === 'trainer' ? 'selected' : '' }}>Trainer</option>
+                        <option value="Trainer" <?php echo e(old('role') === 'trainer' ? 'selected' : ''); ?>>Trainer</option>
                     </select>
                 </div>
                 <!-- Add any additional fields you want to include in the registration form -->
@@ -87,10 +83,11 @@
                 </div>
             </form>
 
-            <div class="login100-more" style="background-image: url('{{ asset('login/images/bg-02.jpg') }}');">
+            <div class="login100-more" style="background-image: url('<?php echo e(asset('login/images/bg-02.jpg')); ?>');">
             </div>
         </div>
     </div>
 </div>
 
-@include('Layouts.logjs')
+<?php echo $__env->make('Layouts.logjs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php /**PATH D:\AD\resources\views/SignGo/signup.blade.php ENDPATH**/ ?>

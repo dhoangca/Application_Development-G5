@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
-    public function signup()
+    public function getRegister()
     {
         return view('SignGo.signup');
     }
@@ -22,12 +22,12 @@ class RegisterController extends Controller
             // 'id' => ['required', 'string', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
-            'role' => ['required', 'in:admin,Training Staff,Trainer'],
+            'password' => ['required', 'string', 'min:5'],
+            'role' => ['required', 'in:admin,training,trainer'],
         ]);
     }
 
-    protected function create(Request $request)
+    protected function postRegister(Request $request)
     {
         $validator = $this->validator($request->all());
 
@@ -45,6 +45,6 @@ class RegisterController extends Controller
 
         // After successful registration, log in the user and redirect to the dashboard
         Auth::login($user);
-        return redirect()->route('Vip.login')->with('success', 'Registration successful!'); // Replace 'dashboard' with the desired route name for the dashboard page
+        return redirect()->route('Auth.getLogin')->with('success', 'Registration successful!'); // Replace 'dashboard' with the desired route name for the dashboard page
     }
 }

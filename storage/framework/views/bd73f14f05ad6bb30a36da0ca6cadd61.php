@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <base href="{{ asset('') }}">
+    <base href="<?php echo e(asset('')); ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Hub</title>
@@ -72,8 +72,8 @@
                     <h1 class="text-center">Welcome to</h1>
                     <h2 class="text-center">Training Hub: Efficient Training Management System</h2>
                     <div class="mt-4">
-                        <a href="{{ asset('Auth/register') }}" class="btn btn-primary btn-lg">Registration</a>
-                        <a href="{{ asset('Auth/login') }}" class="btn btn-secondary btn-lg">Login</a>
+                        <a href="<?php echo e(asset('Auth/register')); ?>" class="btn btn-primary btn-lg">Registration</a>
+                        <a href="<?php echo e(asset('Auth/login')); ?>" class="btn btn-secondary btn-lg">Login</a>
                     </div>
                 </div>
             </div>
@@ -81,9 +81,10 @@
     </div>
 
     <!-- Add your JS scripts here, including Bootstrap JS -->
-    <script src="{{ asset('https://code.jquery.com/jquery-3.5.1.slim.min.js') }}"></script>
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js') }}"></script>
+    <script src="<?php echo e(asset('https://code.jquery.com/jquery-3.5.1.slim.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')); ?>"></script>
 </body>
 
 </html>
+<?php /**PATH D:\AD\resources\views/Contents/welcome.blade.php ENDPATH**/ ?>
