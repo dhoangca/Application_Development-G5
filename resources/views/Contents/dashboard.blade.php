@@ -9,6 +9,10 @@
 
 {{-- start contents --}}
 <div class="content">
+    <div class="container">
+        <!-- Show the username at the top of the page -->
+        <h2>Welcome, {{ Auth::user()->username }}!</h2>
+    </div>
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
