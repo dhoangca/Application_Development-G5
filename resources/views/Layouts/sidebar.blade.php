@@ -21,6 +21,18 @@
                                 <p>Home</p>
                             </a>
                         </li>
+                        <li id="dashboard" class="{{ request()->is('All/dashboard') ? 'active' : '' }}">
+                            <a href="{{ asset('All/dashboard') }}">
+                                <i class="nc-icon nc-ruler-pencil"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li id="notifications" class="{{ request()->is('All/notifications') ? 'active' : '' }}">
+                            <a href="{{ asset('All/notifications') }}">
+                                <i class="nc-icon nc-bell-55"></i>
+                                <p>Notifications</p>
+                            </a>
+                        </li>
                         <li id="accounts" class="{{ request()->is('users') ? 'active' : '' }}">
                             <a href="{{ asset('/users') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
@@ -38,10 +50,29 @@
 
                     {{-- Training Role Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'training')
-                        <li id="accounts" class="{{ request()->is('student-account') ? 'active' : '' }}">
-                            <a href="{{ asset('/student-account') }}">
+                    <li id="categories" class=" {{ request()->is('category') ? 'active' : '' }}">
+                        <a href="{{ asset('/category') }}">
+                            <i class="nc-icon nc-book-bookmark"></i>
+                            <p>Category Management</p>
+                        </a>
+                    </li>
+
+                        <li id="categories" class=" {{ request()->is('category') ? 'active' : '' }}">
+                            <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Student Account Management</p>
+                                <p>Category Management</p>
+                            </a>
+                        </li>
+                        <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
+                            <a href="{{ asset('/category') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Category Management</p>
+                            </a>
+                        </li>
+                        <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
+                            <a href="{{ asset('/category') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Category Management</p>
                             </a>
                         </li>
                         <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">

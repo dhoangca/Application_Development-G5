@@ -1,7 +1,7 @@
 {{-- createTstaff.blade.php --}}
 @include('layouts.header')
 
-@include('Layouts.sidebarTraningStaff')
+@include('Layouts.sidebar')
 
 @include('layouts.navbar')
 {{-- start --}}
