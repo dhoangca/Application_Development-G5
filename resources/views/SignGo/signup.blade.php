@@ -57,9 +57,8 @@
                     <label for="role">Role</label>
                     <select name="role" id="role" class="form-control" required>
                         <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="Training Staff" {{ old('role') === 'training' ? 'selected' : '' }}>Training
-                            Staff</option>
-                        <option value="Trainer" {{ old('role') === 'trainer' ? 'selected' : '' }}>Trainer</option>
+                        <option value="training" {{ old('role') === 'training' ? 'selected' : '' }}>Training</option>
+                        <option value="trainer" {{ old('role') === 'trainer' ? 'selected' : '' }}>Trainer</option>
                     </select>
                 </div>
                 <!-- Add any additional fields you want to include in the registration form -->

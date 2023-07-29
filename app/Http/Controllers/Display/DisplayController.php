@@ -19,12 +19,12 @@ class DisplayController extends Controller
 
     public function indexTraining()
     {
-        return view('Contents.dashboard');
+        return view('Contents.indexTraining');
     }
 
     public function indexTrainer()
     {
-        return view('Contents.dashboard');
+        return view('Contents.indexTrainer');
     }
 
     public function dashboard()
