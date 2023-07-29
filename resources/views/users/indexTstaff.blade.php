@@ -1,7 +1,7 @@
 {{-- indexTstaff.blade.php --}}
 @include('layouts.header')
 
-@include('Layouts.sidebarTraningStaff')
+@include('Layouts.sidebar')
 
 @include('layouts.navbar')
 {{-- start --}}
@@ -43,13 +43,22 @@
                                     <td>{{ $trainee->toeic_score }}</td>
                                     <td>{{ $trainee->majors }}</td>
                                     <td>
-                                        <a href="{{ route('trainees.edit', $trainee->id) }}" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('users.createTstaff') }}" class="btn btn-primary">Add</a>
+                                        <a href="{{ route('users.editTstaff', ['user' => $trainee->id]) }}" class="btn btn-primary">Edit</a>
                                         <form action="{{ route('trainees.destroy', $trainee->id) }}" method="POST" style="display:inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this trainee?')">Delete</button>
                                         </form>
                                     </td>
+                                    {{-- <a href="{{ route('users.create') }}" class="btn btn-primary">Add</a> --}}
+                                    {{-- <a href="{{ route('users.editTstaff', ['user' => $user->id]) }}" class="btn btn-primary">Edit</a>
+                                    <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+                                    </form> --}}
+
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -34,4 +34,27 @@
          demo.initChartsPages();
      });
  </script>
- 
+
+ {{-- // dropdown for sidebar --}}
+ <!-- Add the Bootstrap JS script tag here -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+     // JavaScript code to handle the dropdown toggle on click
+     document.addEventListener("DOMContentLoaded", function() {
+         const categoryDropdownToggle = document.getElementById("categoryDropdownToggle");
+         const categoryDropdown = document.getElementById("categoryDropdown");
+
+         categoryDropdownToggle.addEventListener("click", function(event) {
+             event.preventDefault();
+             // Toggle the "show" class to display/hide the dropdown menu
+             categoryDropdown.classList.toggle("show");
+         });
+
+         // Close the dropdown when clicking outside of it
+         document.addEventListener("click", function(event) {
+             if (!categoryDropdownToggle.contains(event.target)) {
+                 categoryDropdown.classList.remove("show");
+             }
+         });
+     });
+ </script>

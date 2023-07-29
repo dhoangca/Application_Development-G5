@@ -54,24 +54,6 @@ Route::prefix('Auth')->name('Auth.')->group(function () {
     Route::post('login/', [LoginController::class, 'postLogin'])->name('postLogin');
 });
 
-// Route::prefix('Vip')->name('Vip.')->group(function()
-// {
-// Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// Route::post('/register', 'Auth\RegisterController@register');
-
-// });
-
-// Route::middleware([])->group(function () {
-//     // User Management
-//     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-//     // Define other user management routes here
-//     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-//     Route::post('/users', [UserController::class, 'store'])->name('users.store');
-//     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-//     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
-//     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-// });
-
 Route::middleware([])->group(function () {
     // User Management
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
