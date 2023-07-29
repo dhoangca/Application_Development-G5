@@ -23,14 +23,14 @@ Route::prefix('All')->name('All.')->group(function ()
     // Route index by role
     Route::group(['prefix' => 'InRole'], function () {
 
-        Route::get('indexA/', [DisplayController::class, 'indexAdmin'])->name('index.admin');
+        Route::get('indexA/', [DisplayController::class, 'indexAdmin'])->middleware('checkRole:admin')->name('index.admin');
 
         Route::get('indexTing/', [DisplayController::class, 'indexTraining'])->name('index.training');
 
         Route::get('indexTer/', [DisplayController::class, 'indexTrainer'])->name('index.trainer');
     });
 
-    Route::get('dashboard/', [DisplayController::class, 'dashboard'])->name('Dashboard');
+    Route::get('dashboard/', [DisplayController::class, 'dashboard'])->middleware('checkRole:admin')->name('Dashboard');
 
     Route::get('notifications/', [DisplayController::class, 'notifications'])->name('notifications');
 
