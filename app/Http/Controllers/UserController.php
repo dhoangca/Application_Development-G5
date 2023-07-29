@@ -76,6 +76,13 @@ class UserController extends Controller
 
         return redirect()->route('users.index')->with('success', 'User deleted successfully');
     }
+    public function dashboard(Request $request)
+    {
+        // Retrieve the username from the query parameters
+        $username = $request->query('username');
+
+        return view('dashboard', compact('username'));
+    }
 }
 
 

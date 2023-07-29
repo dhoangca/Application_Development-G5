@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable; // Ensure to import Authenticatable from the right namespace
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Trainee;
 
 
 class User extends Authenticatable implements MustVerifyEmail

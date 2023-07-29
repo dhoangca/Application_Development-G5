@@ -5,6 +5,7 @@ use App\Http\Controllers\Display\DisplayController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\TraineeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +81,10 @@ Route::middleware([])->group(function () {
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
+
+Route::get('/trainees', [TraineeController::class, 'index'])->name('users.indexTstaff');
+Route::get('/trainees/create', [TraineeController::class, 'create'])->name('trainees.create');
+Route::post('/trainees', [TraineeController::class, 'store'])->name('trainees.store');
+Route::get('/trainees/{trainee}/edit', [TraineeController::class, 'edit'])->name('trainees.edit');
+Route::put('/trainees/{trainee}', [TraineeController::class, 'update'])->name('trainees.update');
+Route::delete('/trainees/{trainee}', [TraineeController::class, 'destroy'])->name('trainees.destroy');
