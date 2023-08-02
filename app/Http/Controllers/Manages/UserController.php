@@ -14,8 +14,9 @@ class UserController extends Controller
         // Fetch all users from the database
         $users = User::all();
 
+        $pagination = User::paginate(7);
         // Pass the users to the view
-        return view('users.lists', compact('users'));
+        return view('users.lists', compact('users', 'pagination'));
     }
 
     public function create()
