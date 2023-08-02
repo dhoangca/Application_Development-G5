@@ -1,90 +1,108 @@
 <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
         <div class="logo">
-            <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+            <a href="" class="simple-text logo-mini">
                 <div class="logo-image-small">
                     <img src="img/logo-small.png">
                 </div>
-                <!-- <p>CT</p> -->
             </a>
             <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
-                <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
+                Group 5
             </a>
         </div>
-        <div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">           
             <ul class="nav">
-                <li class="active ">
-                    <a href="<?php echo e(asset('All/dashboard')); ?>">
-                    
-                        <i class="nc-icon nc-bank"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(asset('/users')); ?>">
-                        <i class="nc-icon nc-diamond"></i>
-                        <p>Account user management</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./map.html">
-                        <i class="nc-icon nc-pin-3"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(asset('All/notifications')); ?>">
-                    
-                        <i class="nc-icon nc-bell-55"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(asset('All/user')); ?>">
-                    
-                        <i class="nc-icon nc-single-02"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(asset('All/tables')); ?>">
-                        <i class="nc-icon nc-tile-56"></i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <!-- Dropdown Menu -->
-                <li class="nav-item btn-rotate dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="nc-icon nc-diamond"></i></i> <!-- New user icon -->
-                        <p>
-                            Account user management
-                        </p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="<?php echo e(asset('/users/create')); ?>">Add</a>
-                        <a class="dropdown-item" href="<?php echo e(asset('/users')); ?>">List</a>
+                <div style="padding: 7px; display: flex; justify-content: center ">
+                    <div style="display: flex; align-items: center;">
+                        <?php if(auth()->guard()->check()): ?>
+                            <p style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Welcome, <?php echo e(Auth::user()->username); ?></p>
+                        <?php endif; ?>
                     </div>
-                </li>
-                
-                         <!-- End of Dropdown Menu -->
-                    <li>
-                        <a href="./typography.html">
-                            <i class="nc-icon nc-caps-small"></i>
-                            <p>Typography</p>
+                </div>
+                <hr>
+                <?php if(auth()->guard()->check()): ?>
+                    
+                    <?php if(Auth::user()->role === 'admin'): ?>
+                        <li id="home" class="<?php echo e(request()->route()->getName() === 'All.index.admin'? 'active': ''); ?>">
+                            <a href="<?php echo e(route('All.index.admin')); ?>">
+                                <i class="nc-icon nc-bank"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <li id="dashboard" class="<?php echo e(request()->is('All/dashboard') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('All/dashboard')); ?>">
+                                <i class="nc-icon nc-ruler-pencil"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li id="notifications" class="<?php echo e(request()->is('All/notifications') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('All/notifications')); ?>">
+                                <i class="nc-icon nc-bell-55"></i>
+                                <p>Notifications</p>
+                            </a>
+                        </li>
+                        <li id="accounts" class="<?php echo e(request()->is('users') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('/users')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Accounts MGMT</p>
+                            </a>
+                        </li>
+                        <li id="other" class="<?php echo e(request()->is('...') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('/users')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>... MGMT</p>
+                            </a>
+                        </li>
+                        
+                    <?php endif; ?>
+
+                    
+                    <?php if(Auth::user()->role === 'training'): ?>
+                    <li id="categories" class=" <?php echo e(request()->is('category') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(asset('managetrainee/trainees')); ?>">
+                            <i class="nc-icon nc-book-bookmark"></i>
+                            <p>AC Trainee MGNT</p>
                         </a>
                     </li>
-                 
-                <li>
-                    <a href="./upgrade.html">
-                        <i class="nc-icon nc-spaceship"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
-            
+
+                        <li id="categories" class=" <?php echo e(request()->is('category') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('manageCourse/courses')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Course Management</p>
+                            </a>
+                        </li>
+                        <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('/category')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Category Management</p>
+                            </a>
+                        </li>
+                        <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('/category')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Category Management</p>
+                            </a>
+                        </li>
+                        <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('/category')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Category Management</p>
+                            </a>
+                        </li>
+                        
+                    <?php endif; ?>
+
+                    
+                    <?php if(Auth::user()->role === 'trainer'): ?>
+                        <li id="profile" class="<?php echo e(request()->is('profile') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('/profile')); ?>">
+                                <i class="nc-icon nc-circle-09"></i>
+                                <p>View Profile</p>
+                            </a>
+                        </li>
+                        
+                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
     </div>

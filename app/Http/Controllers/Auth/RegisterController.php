@@ -13,7 +13,7 @@ class RegisterController extends Controller
 {
     public function getRegister()
     {
-        return view('SignGo.signup');
+        return view('Auth.signup');
     }
 
     protected function validator(array $data)
