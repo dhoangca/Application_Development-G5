@@ -9,11 +9,12 @@
  <script src="<?php echo e(asset('js/plugins/bootstrap-notify.js')); ?>"></script>
  <script src="<?php echo e(asset('js/paper-dashboard.min.js?v=2.0.1 type="text/javascript"')); ?>"></script>
  <script src="<?php echo e(asset('demo/demo.js')); ?>"></script>
+ 
+
  <script>
      $(document).ready(function() {
          // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
          demo.initChartsPages();
      });
  </script>
- 
 <?php /**PATH D:\AD\resources\views/Layouts/js.blade.php ENDPATH**/ ?>

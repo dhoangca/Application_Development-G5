@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Display\DisplayController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Manages\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\TraineeController;
-use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\Manages\TraineeController;
+use App\Http\Controllers\Manages\CoursesController;
+use App\Http\Controllers\Auth\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,16 +44,16 @@ Route::prefix('All')->name('All.')->group(function () {
 
 // login and register 
 Route::prefix('Auth')->name('Auth.')->group(function () {
-    // GET route to display the registration form
+    
     Route::get('register/', [RegisterController::class, 'getRegister'])->name('getRegister');
-
-    // POST route to handle the registration form submission
+    
     Route::post('register/', [RegisterController::class, 'postRegister'])->name('postRegister');
 
     Route::get('login/', [LoginController::class, 'getLogin'])->name('getLogin');
-
-    // POST route to handle the login form submission
+    
     Route::post('login/', [LoginController::class, 'postLogin'])->name('postLogin');
+
+    Route::post('logout/', [LogoutController::class, 'logout'])->name('logout');
 });
 
 Route::middleware([])->group(function () {

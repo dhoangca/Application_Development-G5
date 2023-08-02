@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <div class="main-panel">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -16,7 +10,7 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+                <a class="navbar-brand" href="">G5</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                 aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,20 +60,49 @@
                             </p>
                         </a>
                     </li>
+                    <!-- Your navigation bar or dropdown menu HTML -->
                     <li class="nav-item btn-rotate dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="nc-icon nc-single-02"></i> <!-- New user icon -->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="nc-icon nc-single-02"></i>
                             <p>
-                                <span class="d-lg-none d-md-block">Account</span>
+                                <?php if(auth()->guard()->check()): ?>
+                                    <?php echo e(Auth::user()->username); ?> <!-- Display the username -->
+                                <?php else: ?>
+                                    <span class="d-lg-none d-md-block">Account</span>
+                                <?php endif; ?>
                             </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="<?php echo e(asset('Vip/register')); ?>">Sign UP</a>
-                            <a class="dropdown-item" href="<?php echo e(asset('Vip/login')); ?>">Sign IN</a>
-                            <a class="dropdown-item" href="#">Log out</a>
+                            <?php if(auth()->guard()->check()): ?>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <form method="POST" action="<?php echo e(route('Auth.logout')); ?>">
+                                    <?php echo csrf_field(); ?>
+                                    <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
+                                        class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </form>
+                                <!-- Logout link for authenticated users -->
+                            <?php else: ?>
+                                <!-- Your login link or button here -->
+                            <?php endif; ?>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>

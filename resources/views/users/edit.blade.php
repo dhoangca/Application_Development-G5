@@ -26,15 +26,11 @@
                             <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control">
-                        </div>
-                        <div class="form-group">
                             <label for="role">Role</label>
                             <select name="role" id="role" class="form-control" required>
                                 <option value="admin" @if ($user->role === 'admin') selected @endif>Admin</option>
-                                <option value="Training Staff" @if ($user->role === 'Training Staff') selected @endif>Training Staff</option>
-                                <option value="Trainer" @if ($user->role === 'Trainer') selected @endif>Trainer</option>
+                                <option value="training" @if ($user->role === 'training') selected @endif>Training Staff</option>
+                                <option value="trainer" @if ($user->role === 'trainer') selected @endif>Trainer</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>

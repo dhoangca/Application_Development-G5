@@ -10,8 +10,16 @@
                 Group 5
             </a>
         </div>
-        <div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">           
             <ul class="nav">
+                <div style="padding: 7px; display: flex; justify-content: center ">
+                    <div style="display: flex; align-items: center;">
+                        @auth
+                            <p style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Welcome, {{ Auth::user()->username }}</p>
+                        @endauth
+                    </div>
+                </div>
+                <hr>
                 @auth
                     {{-- Admin Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'admin')

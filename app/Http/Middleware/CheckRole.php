@@ -15,7 +15,7 @@ class CheckRole
 
         if (!$user) {
             // Redirect to the login page or return an error response
-            return redirect()->route('login');
+            return redirect()->route('Auth.getLogin');
         }
 
         if (!in_array($user->role, $roles)) {

@@ -72,8 +72,8 @@
                     <h1 class="text-center">Welcome to</h1>
                     <h2 class="text-center">Training Hub: Efficient Training Management System</h2>
                     <div class="mt-4">
-                        <a href="{{ asset('Auth/register') }}" class="btn btn-primary btn-lg">Registration</a>
-                        <a href="{{ asset('Auth/login') }}" class="btn btn-secondary btn-lg">Login</a>
+                            {{-- <a href="{{ asset('Auth/register') }}" class="btn btn-primary btn-lg">Registration</a> --}}
+                        <a href="{{ asset('Auth/login') }}" class="btn btn-primary btn-lg">Login</a>
                     </div>
                 </div>
             </div>

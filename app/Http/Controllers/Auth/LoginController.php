@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function getLogin()
     {
-        return view('SignGo.signin');
+        return view('Auth.signin');
     }
 
     public function postLogin(Request $request)
