@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trainee extends Model
 {
-    protected $primaryKey = 'trainee_id';
+    protected $table = "trainees"; 
+    protected $primaryKey = 'traineeId';
     protected $fillable = [
         'name',
         'age',
@@ -17,5 +18,7 @@ class Trainee extends Model
         'education',
         'toeic_score',
         'majors',
+        'created_at',
+        'updated_at',
     ];
 }
