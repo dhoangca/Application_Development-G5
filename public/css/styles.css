@@ -1,0 +1,93 @@
+/* Center text in table header and data cells */
+.table th,
+.table td {
+    text-align: center;
+}
+
+/* Add some basic styling for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+}
+
+/* Style the action buttons */
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.action-buttons button {
+    margin-left: 5px;
+}
+
+.action-buttons a.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.action-buttons a.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.action-buttons a.btn-primary:hover,
+.action-buttons button.btn-danger:hover {
+    filter: brightness(90%);
+}
+
+/* Style the 'Create' button */
+.create-button {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Pagination Styles */
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Adjust the size of the pagination links */
+.pagination li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.pagination li a {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Adjust the size of the SVG icons, if present */
+.pagination svg {
+    width: 12px;
+    height: 12px;
+}
+
+.pagination li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: #fff;
+    pointer-events: none;
+}
+

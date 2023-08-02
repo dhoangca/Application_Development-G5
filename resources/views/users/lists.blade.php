@@ -9,9 +9,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">User Management</h4>
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 class="card-title" style="margin-right: 10px;">User Management</h4>
+                    <div class="search-bar"
+                        style="display: flex; align-items: center; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        <i class="fas fa-search search-icon" style="margin-right: 5px;"></i>
+                        <input type="text" class="search-input"
+                            style="border: none; outline: none; background: transparent;" placeholder="Search...">
+                    </div>
                 </div>
+                <hr>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
@@ -21,8 +28,8 @@
                                 <th>Email</th>
                                 <th>Creation date</th>
                                 <th>Updated date</th>
-                                <th class="text-right">Role</th>
-                                <th class="text-right">Action</th>
+                                <th>Role</th>
+                                <th>Action</th>
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
@@ -32,8 +39,8 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td>{{ $user->updated_at }}</td>
-                                        <td class="text-right">{{ $user->role }}</td>
-                                        <td class="text-right">
+                                        <td>{{ $user->role }}</td>
+                                        <td>
                                             <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                                 class="btn btn-primary">Edit</a>
                                             <form action="{{ route('users.destroy', ['user' => $user->id]) }}"
@@ -48,7 +55,13 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <a href="{{ asset('/users/create') }}" class="btn btn-primary">Create</a>
+                        <!-- Pagination -->
+                        @if ($pagination->hasPages())
+                            @include('Layouts.pagination', ['paginator' => $pagination])
+                        @endif
+                        <div class="create-button">
+                            <a href="{{ asset('/users/create') }}" class="btn btn-primary">Create</a>
+                        </div>
                     </div>
                 </div>
             </div>
