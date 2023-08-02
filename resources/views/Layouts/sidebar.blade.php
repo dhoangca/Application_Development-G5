@@ -51,16 +51,16 @@
                     {{-- Training Role Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'training')
                     <li id="categories" class=" {{ request()->is('category') ? 'active' : '' }}">
-                        <a href="{{ asset('/category') }}">
+                        <a href="{{ asset('managetrainee/trainees') }}">
                             <i class="nc-icon nc-book-bookmark"></i>
-                            <p>Category Management</p>
+                            <p>AC Trainee MGNT</p>
                         </a>
                     </li>
 
                         <li id="categories" class=" {{ request()->is('category') ? 'active' : '' }}">
-                            <a href="{{ asset('/category') }}">
+                            <a href="{{ asset('manageCourse/courses') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category Management</p>
+                                <p>Course Management</p>
                             </a>
                         </li>
                         <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
