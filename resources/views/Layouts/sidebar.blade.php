@@ -51,19 +51,19 @@
                         <li id="Trainee" class=" {{ request()->is('managetrainee/trainees') ? 'active' : '' }}">
                             <a href="{{ asset('managetrainee/trainees') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>AC Trainee MGNT</p>
+                                <p>AC Trainee MGMT</p>
                             </a>
                         </li>
                         <li id="Course" class=" {{ request()->is('manageCourse/courses') ? 'active' : '' }}">
                             <a href="{{ asset('manageCourse/courses') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Course Management</p>
+                                <p>Course MGMT</p>
                             </a>
                         </li>
                         <li id="Category" class="{{ request()->is('category') ? 'active' : '' }}">
                             <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category Management</p>
+                                <p>Category MGMT</p>
                             </a>
                         </li>
                         {{-- Add more Admin-specific sidebar menu items here --}}
@@ -74,31 +74,31 @@
                         <li id="Trainee" class=" {{ request()->is('managetrainee/trainees') ? 'active' : '' }}">
                             <a href="{{ asset('managetrainee/trainees') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>AC Trainee MGNT</p>
+                                <p>AC Trainee MGMT</p>
                             </a>
                         </li>
                         <li id="Course" class=" {{ request()->is('manageCourse/courses') ? 'active' : '' }}">
                             <a href="{{ asset('manageCourse/courses') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Course Management</p>
+                                <p>Course MGMT</p>
                             </a>
                         </li>
                         <li id="Category" class="{{ request()->is('category') ? 'active' : '' }}">
                             <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category Management</p>
+                                <p>Category MGMT</p>
                             </a>
                         </li>
                         <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
                             <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category Management</p>
+                                <p>Category MGMT</p>
                             </a>
                         </li>
                         <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
                             <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category Management</p>
+                                <p>Category MGMT</p>
                             </a>
                         </li>
                         {{-- Add more Training-specific sidebar menu items here --}}
