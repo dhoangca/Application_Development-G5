@@ -45,12 +45,16 @@
             height: 100vh;
             object-fit: cover;
         }
+
         .col-md-6 {
             padding: 0px;
         }
+
         .col-md-6 .content {
-            padding: 20px; /* Add your desired padding value here */
+            padding: 20px;
+            /* Add your desired padding value here */
         }
+
         /* Add margin to the buttons */
         /* .btn {
             margin-right: 10px;
@@ -72,8 +76,9 @@
                     <h1 class="text-center">Welcome to</h1>
                     <h2 class="text-center">Training Hub: Efficient Training Management System</h2>
                     <div class="mt-4">
-                            
-                        <a href="<?php echo e(asset('Auth/login')); ?>" class="btn btn-primary btn-lg">Login</a>
+                        
+                        <a href="<?php echo e(asset('Auth/login')); ?>" class="btn btn-primary btn-lg btn-block"
+                            style="background-color: #4CAF50; color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; width: 100%; transition: background-color 0.3s;">Login</a>
                     </div>
                 </div>
             </div>

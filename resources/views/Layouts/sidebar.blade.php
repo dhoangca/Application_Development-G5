@@ -10,12 +10,13 @@
                 Group 5
             </a>
         </div>
-        <div class="sidebar-wrapper">           
+        <div class="sidebar-wrapper">
             <ul class="nav">
                 <div style="padding: 7px; display: flex; justify-content: center ">
                     <div style="display: flex; align-items: center;">
                         @auth
-                            <p style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Welcome, {{ Auth::user()->username }}</p>
+                            <p style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Welcome,
+                                {{ Auth::user()->username }}</p>
                         @endauth
                     </div>
                 </div>
@@ -41,16 +42,28 @@
                                 <p>Notifications</p>
                             </a>
                         </li>
-                        <li id="accounts" class="{{ request()->is('users') ? 'active' : '' }}">
-                            <a href="{{ asset('/users') }}">
+                        <li id="accounts" class="{{ request()->is('Users/users') ? 'active' : '' }}">
+                            <a href="{{ asset('Users/users/') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>Accounts MGMT</p>
                             </a>
                         </li>
-                        <li id="other" class="{{ request()->is('...') ? 'active' : '' }}">
-                            <a href="{{ asset('/users') }}">
+                        <li id="Trainee" class=" {{ request()->is('managetrainee/trainees') ? 'active' : '' }}">
+                            <a href="{{ asset('managetrainee/trainees') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>... MGMT</p>
+                                <p>AC Trainee MGNT</p>
+                            </a>
+                        </li>
+                        <li id="Course" class=" {{ request()->is('manageCourse/courses') ? 'active' : '' }}">
+                            <a href="{{ asset('manageCourse/courses') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Course Management</p>
+                            </a>
+                        </li>
+                        <li id="Category" class="{{ request()->is('category') ? 'active' : '' }}">
+                            <a href="{{ asset('/category') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Category Management</p>
                             </a>
                         </li>
                         {{-- Add more Admin-specific sidebar menu items here --}}
@@ -58,20 +71,19 @@
 
                     {{-- Training Role Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'training')
-                    <li id="categories" class=" {{ request()->is('category') ? 'active' : '' }}">
-                        <a href="{{ asset('managetrainee/trainees') }}">
-                            <i class="nc-icon nc-book-bookmark"></i>
-                            <p>AC Trainee MGNT</p>
-                        </a>
-                    </li>
-
-                        <li id="categories" class=" {{ request()->is('category') ? 'active' : '' }}">
+                        <li id="Trainee" class=" {{ request()->is('managetrainee/trainees') ? 'active' : '' }}">
+                            <a href="{{ asset('managetrainee/trainees') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>AC Trainee MGNT</p>
+                            </a>
+                        </li>
+                        <li id="Course" class=" {{ request()->is('manageCourse/courses') ? 'active' : '' }}">
                             <a href="{{ asset('manageCourse/courses') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>Course Management</p>
                             </a>
                         </li>
-                        <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
+                        <li id="Category" class="{{ request()->is('category') ? 'active' : '' }}">
                             <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>Category Management</p>

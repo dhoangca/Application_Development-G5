@@ -17,13 +17,18 @@
                         </ul>
                     </div>
                 @endif
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="wrap-input100 validate-input" data-validate="Email is required">
                     <input class="input100" type="email" name="email" value="{{ old('email') }}" required>
                     <span class="focus-input100"></span>
                     @if (!old('email'))
                         <span class="label-input100">Email</span>
                     @endif
-                </div>  
+                </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
                     <input class="input100" type="password" name="password" required>
