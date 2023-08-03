@@ -19,12 +19,26 @@ class UserController extends Controller
         return view('users.lists', compact('users', 'pagination'));
     }
 
+    public function toggleStatus(User $user)
+    {
+        // Toggle the user's status between 'active' and 'blocked'
+        $user->update([
+            'status' => $user->status === 'active' ? 'blocked' : 'active',
+        ]);
+
+        // Set a flash message to inform the user about the status update
+        $statusMessage = $user->status === 'active' ? 'User has been unblocked.' : 'User has been blocked.';
+        session()->flash('status', $statusMessage);
+
+        return redirect()->back();
+    }
+
     public function create()
     {
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function postCreate(Request $request)
     {
         // Validate the request data
         $validatedData = $request->validate([
@@ -68,12 +82,13 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully');
     }
 
-    public function destroy(User $user)
+    public function delete(User $user)
     {
         $user->delete();
 
         return redirect()->route('users.index')->with('success', 'User deleted successfully');
     }
+
     public function dashboard(Request $request)
     {
         // Retrieve the username from the query parameters

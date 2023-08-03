@@ -19,6 +19,11 @@
                     </div>
                 </div>
                 <hr>
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
@@ -26,9 +31,10 @@
                                 <th>id</th>
                                 <th>Username</th>
                                 <th>Email</th>
+                                <th>Status</th>
+                                <th>Role</th>
                                 <th>Creation date</th>
                                 <th>Updated date</th>
-                                <th>Role</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -37,13 +43,23 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->username }}</td>
                                         <td>{{ $user->email }}</td>
+                                        <td>{{ $user->status }}</td>
+                                        <td>{{ $user->role }}</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td>{{ $user->updated_at }}</td>
-                                        <td>{{ $user->role }}</td>
                                         <td>
-                                            <a href="{{ route('users.edit', ['user' => $user->id]) }}"
-                                                class="btn btn-primary">Edit</a>
-                                            <form action="{{ route('users.destroy', ['user' => $user->id]) }}"
+                                            {{-- <a href="{{ route('users.edit', ['user' => $user->id]) }}"
+                                                class="btn btn-primary">Edit</a> --}}
+                                            <form action="{{ route('Users.users.toggleStatus', ['user' => $user->id]) }}"
+                                                method="POST" style="display: inline-block;">
+                                                @csrf
+                                                @method('PUT')
+                                                <button type="submit"
+                                                    class="btn btn-{{ $user->status === 'active' ? 'danger' : 'success' }}">
+                                                    {{ $user->status === 'active' ? 'Block' : 'Unblock' }}
+                                                </button>
+                                            </form>
+                                            <form action="{{ route('Users.users.delete', ['user' => $user->id]) }}"
                                                 method="POST" style="display: inline-block;">
                                                 @csrf
                                                 @method('DELETE')
