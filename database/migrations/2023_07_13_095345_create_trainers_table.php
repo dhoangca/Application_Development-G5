@@ -15,14 +15,16 @@ class CreateTrainersTable extends Migration
     {
         Schema::create('trainers', function (Blueprint $table) {
             $table->id('trainerId');
-            $table->string('name');
+            $table->string('fname');
+            $table->string('lname');
             $table->integer('age');
+            $table->integer('image');
             $table->string('telephone');
             $table->date('date_of_birth');
             $table->string('type');
             $table->string('working_place');
-            $table->string('email');
             $table->string('address');
+            $table->string('about');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });

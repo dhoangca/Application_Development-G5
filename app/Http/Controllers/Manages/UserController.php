@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Manages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\UserModel;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -12,14 +12,14 @@ class UserController extends Controller
     public function index()
     {
         // Fetch all users from the database
-        $users = User::all();
+        $users = UserModel::all();
 
-        $pagination = User::paginate(7);
+        $pagination = UserModel::paginate(7);
         // Pass the users to the view
         return view('users.lists', compact('users', 'pagination'));
     }
 
-    public function toggleStatus(User $user)
+    public function toggleStatus(UserModel $user)
     {
         // Toggle the user's status between 'active' and 'blocked'
         $user->update([
@@ -49,7 +49,7 @@ class UserController extends Controller
         ]);
 
         // Create a new user
-        $user = new User;
+        $user = new UserModel;
         $user->username = $validatedData['username'];
         $user->email = $validatedData['email'];
         $user->password = Hash::make($validatedData['password']);
@@ -59,12 +59,12 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User created successfully');
     }
 
-    public function edit(User $user)
+    public function edit(UserModel $user)
     {
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, UserModel $user)
     {
         // Validate the request data
         $validatedData = $request->validate([
@@ -82,11 +82,11 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully');
     }
 
-    public function delete(User $user)
+    public function delete(UserModel $user)
     {
         $user->delete();
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully');
+        return redirect()->route('Users.users.index')->with('success', 'User deleted successfully');
     }
 
     public function dashboard(Request $request)
