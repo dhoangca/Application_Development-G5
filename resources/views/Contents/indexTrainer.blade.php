@@ -14,8 +14,8 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h5 class="card-title">Welcome back, Admin</h5>
-            <p class="card-category">Home admin</p>
+            <h5 class="card-title">Welcome back, Trainer</h5>
+            <p class="card-category">Home Trainer</p>
           </div>
           <div class="card-body">
             <div class="row">

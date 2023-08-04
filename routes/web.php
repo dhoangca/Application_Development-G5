@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Manages\TraineeController;
 use App\Http\Controllers\Manages\CoursesController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Display\ProfileMGMTController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,16 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         Route::get('notifications/', [DisplayController::class, 'notifications'])->name('notifications');
 
         Route::get('user/', [DisplayController::class, 'user'])->name('user');
+    });
+
+    // route of role Trainer
+    Route::prefix('Trainer')->name('Trainer.')->group(function () {
+        
+        Route::get('/ViewProfile', [ProfileMGMTController::class, 'ViewProfile'])->middleware('checkRole:trainer')->name('ViewProfile');
+
+        Route::post('/ViewProfile', [ProfileMGMTController::class, 'updateProfile'])->middleware('checkRole:trainer')->name('updateProfile');
+
+        
     });
 
     Route::prefix('Users')->name('Users.')->group(function () {

@@ -1,12 +1,12 @@
 <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
         <div class="logo">
-            <a href="" class="simple-text logo-mini">
+            <a href="#" class="simple-text logo-mini">
                 <div class="logo-image-small">
                     <img src="img/logo-small.png">
                 </div>
             </a>
-            <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+            <a href="#" class="simple-text logo-normal">
                 Group 5
             </a>
         </div>
@@ -71,6 +71,18 @@
 
                     {{-- Training Role Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'training')
+                        <li id="home" class="{{ request()->route()->getName() === 'All.index.training'? 'active': '' }}">
+                            <a href="{{ route('All.index.training') }}">
+                                <i class="nc-icon nc-bank"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <li id="notifications" class="{{ request()->is('All/notifications') ? 'active' : '' }}">
+                            <a href="{{ asset('All/notifications') }}">
+                                <i class="nc-icon nc-bell-55"></i>
+                                <p>Notifications</p>
+                            </a>
+                        </li>
                         <li id="Trainee" class=" {{ request()->is('managetrainee/trainees') ? 'active' : '' }}">
                             <a href="{{ asset('managetrainee/trainees') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
@@ -106,10 +118,30 @@
 
                     {{-- Trainer Role Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'trainer')
-                        <li id="profile" class="{{ request()->is('profile') ? 'active' : '' }}">
-                            <a href="{{ asset('/profile') }}">
-                                <i class="nc-icon nc-circle-09"></i>
+                        <li id="home"
+                            class="{{ request()->route()->getName() === 'All.index.trainer'? 'active': '' }}">
+                            <a href="{{ route('All.index.trainer') }}">
+                                <i class="nc-icon nc-bank"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        
+                        <li id="notifications" class="{{ request()->is('All/notifications') ? 'active' : '' }}">
+                            <a href="{{ asset('All/notifications') }}">
+                                <i class="nc-icon nc-bell-55"></i>
+                                <p>Notifications</p>
+                            </a>
+                        </li>
+                        <li id="profile" class="{{ request()->is('Trainer/ViewProfile') ? 'active' : '' }}">
+                            <a href="{{ asset('Trainer/ViewProfile') }}">
+                                <i class="nc-icon nc-badge"></i>
                                 <p>View Profile</p>
+                            </a>
+                        </li>
+                        <li id="view" class="{{ request()->is('Trainer/view') ? 'active' : '' }}">
+                            <a href="{{ asset('Trainer/view') }}">
+                                <i class="nc-icon nc-calendar-60"></i>
+                                <p>View</p>
                             </a>
                         </li>
                         {{-- Add more Trainer-specific sidebar menu items here --}}
