@@ -20,6 +20,7 @@ class CreateTrainersTable extends Migration
             $table->integer('age');
             $table->integer('image');
             $table->string('telephone');
+            $table->string('email');
             $table->date('date_of_birth');
             $table->string('type');
             $table->string('working_place');

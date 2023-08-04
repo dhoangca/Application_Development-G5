@@ -15,7 +15,7 @@ class UserModel extends Authenticatable implements MustVerifyEmail
 
     protected $table = "users";
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'userId';
 
     protected $fillable = ['username', 'password', 'email', 'status', 'role', 'created_at', 'updated_at'];
 
@@ -26,10 +26,5 @@ class UserModel extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function trainers()
-    {
-        return $this->belongsToMany(TrainerModel::class, 'user_trainer', 'id', 'trainerId')->withTimestamps();
-    }
 
 }

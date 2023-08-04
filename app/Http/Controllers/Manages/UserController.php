@@ -68,8 +68,8 @@ class UserController extends Controller
     {
         // Validate the request data
         $validatedData = $request->validate([
-            'username' => 'required|unique:users,username,' . $user->id . ',id',
-            'email' => 'required|email|unique:users,email,' . $user->id . ',id',
+            'username' => 'required|unique:users,username,' . $user->userId . ',userId',
+            'email' => 'required|email|unique:users,email,' . $user->userId . ',userId',
             'role' => 'required|in:admin,user,training,trainer',
         ]);
 
