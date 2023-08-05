@@ -9,6 +9,9 @@ use App\Http\Controllers\Manages\TraineeController;
 use App\Http\Controllers\Manages\CoursesController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Display\ProfileMGMTController;
+use App\Http\Controllers\Manages\CourseCategoryController;
+use App\Http\Controllers\Manages\TopicController;
+use App\Http\Controllers\Manages\TrainerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,17 +67,14 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         Route::get('/ViewProfile', [ProfileMGMTController::class, 'ViewProfile'])->middleware('checkRole:trainer')->name('ViewProfile');
 
         Route::post('/ViewProfile', [ProfileMGMTController::class, 'updateProfile'])->middleware('checkRole:trainer')->name('updateProfile');
-
     });
 
     // route of role Training with function assign trainer to a topic
     Route::prefix('Assign')->name('Assign.')->group(function () {
-        
+
         Route::get('/assign-trainer-to-topic', [TopicTrainerController::class, 'assignTrainerForm'])->middleware('checkRole:admin,training')->name('assignTrainerForm');
 
         Route::post('/assign-trainer-to-topic', [TopicTrainerController::class, 'assignTrainerToTopic'])->middleware('checkRole:admin,training')->name('assignTrainerToTopic');
-
-        
     });
 
     Route::prefix('Users')->name('Users.')->group(function () {
@@ -133,35 +133,36 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         // Route for displaying a list of all trainee accounts
         Route::get('/courses', [CoursesController::class, 'index'])->middleware('checkRole:admin,training')->name('courses.index');
     });
-});
 
-Route::prefix('MNGCourseCategories')->name('MNGCourseCategories.')->group(function () {
-    //course_categories
-    Route::get('/course-categories', [CourseCategoryController::class, 'index'])->middleware('checkRole:admin,training')->name('course-categories.index');
 
-    Route::get('/course-categories/create', [CourseCategoryController::class, 'create'])->middleware('checkRole:admin,training')->name('course-categories.create');
+    Route::prefix('MNGCourseCategories')->name('MNGCourseCategories.')->group(function () {
+        //course_categories
+        Route::get('/course-categories', [CourseCategoryController::class, 'index'])->middleware('checkRole:admin,training')->name('course-categories.index');
 
-    Route::post('/course-categories', [CourseCategoryController::class, 'store'])->middleware('checkRole:admin,training')->name('course-categories.store');
+        Route::get('/course-categories/create', [CourseCategoryController::class, 'create'])->middleware('checkRole:admin,training')->name('course-categories.create');
 
-    Route::get('/course-categories/{category}/edit', [CourseCategoryController::class, 'edit'])->middleware('checkRole:admin,training')->name('course-categories.edit');
+        Route::post('/course-categories', [CourseCategoryController::class, 'store'])->middleware('checkRole:admin,training')->name('course-categories.store');
 
-    Route::put('/course-categories/{categoryId}', [CourseCategoryController::class, 'update'])->middleware('checkRole:admin,training')->name('course-categories.update');
-    
-    Route::delete('/course-categories/{category}', [CourseCategoryController::class, 'delete'])->middleware('checkRole:admin,training')->name('course-categories.delete');
-});
+        Route::get('/course-categories/{category}/edit', [CourseCategoryController::class, 'edit'])->middleware('checkRole:admin,training')->name('course-categories.edit');
 
-Route::prefix('MngTopic')->name('MngTopic.')->group(function () {
-    //topic
+        Route::put('/course-categories/{categoryId}', [CourseCategoryController::class, 'update'])->middleware('checkRole:admin,training')->name('course-categories.update');
 
-    Route::get('/topics', [TopicController::class, 'index'])->middleware('checkRole:admin,training')->name('topics.index');
+        Route::delete('/course-categories/{category}', [CourseCategoryController::class, 'delete'])->middleware('checkRole:admin,training')->name('course-categories.delete');
+    });
 
-    Route::get('/topics/create', [TopicController::class, 'create'])->middleware('checkRole:admin,training')->name('topics.create');
+    Route::prefix('MngTopic')->name('MngTopic.')->group(function () {
+        //topic
 
-    Route::post('/topics', [TopicController::class, 'store'])->middleware('checkRole:admin,training')->name('topics.store');
+        Route::get('/topics', [TopicController::class, 'index'])->middleware('checkRole:admin,training')->name('topics.index');
 
-    Route::get('/topics/{topic}/edit', [TopicController::class, 'edit'])->middleware('checkRole:admin,training')->name('topics.edit');
+        Route::get('/topics/create', [TopicController::class, 'create'])->middleware('checkRole:admin,training')->name('topics.create');
 
-    Route::put('/topics/{topicId}', [TopicController::class, 'update'])->middleware('checkRole:admin,training')->name('topics.update');
+        Route::post('/topics', [TopicController::class, 'store'])->middleware('checkRole:admin,training')->name('topics.store');
 
-    Route::delete('/topics/{topic}', [TopicController::class, 'destroy'])->middleware('checkRole:admin,training')->name('topics.destroy');
+        Route::get('/topics/{topic}/edit', [TopicController::class, 'edit'])->middleware('checkRole:admin,training')->name('topics.edit');
+
+        Route::put('/topics/{topicId}', [TopicController::class, 'update'])->middleware('checkRole:admin,training')->name('topics.update');
+
+        Route::delete('/topics/{topic}', [TopicController::class, 'destroy'])->middleware('checkRole:admin,training')->name('topics.destroy');
+    });
 });

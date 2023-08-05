@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Manages;
 
-use App\Models\Trainer;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\TrainerModel;
 
 class TrainerController extends Controller
 {
     public function index()
     {
-        $trainers = Trainer::all();
+        $trainers = TrainerModel::all();
         return view('trainers.index', compact('trainers'));
     }
 
@@ -26,14 +27,14 @@ class TrainerController extends Controller
             // Add other validation rules for the rest of the fields
         ]);
 
-        Trainer::create($request->all());
+        TrainerModel::create($request->all());
 
         return redirect()->route('trainers.index')->with('success', 'Trainer profile created successfully!');
     }
 
     public function edit($id)
     {
-        $trainer = Trainer::findOrFail($id);
+        $trainer = TrainerModel::findOrFail($id);
         return view('trainers.edit', compact('trainer'));
     }
 
@@ -45,7 +46,7 @@ class TrainerController extends Controller
             // Add other validation rules for the rest of the fields
         ]);
 
-        $trainer = Trainer::findOrFail($id);
+        $trainer = TrainerModel::findOrFail($id);
         $trainer->update($request->all());
 
         return redirect()->route('trainers.index')->with('success', 'Trainer profile updated successfully!');
@@ -53,7 +54,7 @@ class TrainerController extends Controller
 
     public function destroy($id)
     {
-        $trainer = Trainer::findOrFail($id);
+        $trainer = TrainerModel::findOrFail($id);
         $trainer->delete();
 
         return redirect()->route('trainers.index')->with('success', 'Trainer profile deleted successfully!');
