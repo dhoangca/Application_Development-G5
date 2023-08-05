@@ -77,7 +77,7 @@
                             <?php echo $__env->make('Layouts.pagination', ['paginator' => $pagination], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <?php endif; ?>
                         <div class="create-button">
-                            <a href="<?php echo e(asset('/users/create')); ?>" class="btn btn-primary">Create</a>
+                            <a href="<?php echo e(asset('/Users/users/create')); ?>" class="btn btn-primary">Create</a>
                         </div>
                     </div>
                 </div>
