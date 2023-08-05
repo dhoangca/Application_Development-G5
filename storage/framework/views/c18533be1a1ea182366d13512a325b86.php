@@ -39,7 +39,7 @@
                                         <label>Select a Trainer:</label>
                                         <select class="form-control" name="trainerId" id="trainerId">
                                             <?php $__currentLoopData = $trainers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trainer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($trainer->trainerId); ?>"><?php echo e($trainer->name); ?></option>
+                                                <option value="<?php echo e($trainer->trainerId); ?>"><?php echo e($trainer->fname); ?><?php echo e($trainer->lname); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>
