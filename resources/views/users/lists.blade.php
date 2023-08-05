@@ -40,7 +40,7 @@
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr>
-                                        <td>{{ $user->userId }}</td>
+                                        <td>{{ $user->id }}</td>
                                         <td>{{ $user->username }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->status }}</td>
@@ -50,7 +50,7 @@
                                         <td>
                                             {{-- <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                                 class="btn btn-primary">Edit</a> --}}
-                                            <form action="{{ route('Users.users.toggleStatus', ['user' => $user->userId]) }}"
+                                            <form action="{{ route('Users.users.toggleStatus', ['user' => $user->id]) }}"
                                                 method="POST" style="display: inline-block;">
                                                 @csrf
                                                 @method('PUT')
@@ -59,7 +59,7 @@
                                                     {{ $user->status === 'active' ? 'Block' : 'Unblock' }}
                                                 </button>
                                             </form>
-                                            <form action="{{ route('Users.users.delete', ['user' => $user->userId]) }}"
+                                            <form action="{{ route('Users.users.delete', ['user' => $user->id]) }}"
                                                 method="POST" style="display: inline-block;">
                                                 @csrf
                                                 @method('DELETE')
