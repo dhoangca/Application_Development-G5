@@ -95,16 +95,16 @@
                                 <p>Course MGMT</p>
                             </a>
                         </li>
-                        <li id="Category" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
-                            <a href="<?php echo e(asset('/category')); ?>">
+                        <li id="Category" class="<?php echo e(request()->is('MNGCourseCategories/course-categories') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('MNGCourseCategories/course-categories')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category MGMT</p>
+                                <p>Course-Category MGMT</p>
                             </a>
                         </li>
-                        <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
-                            <a href="<?php echo e(asset('/category')); ?>">
+                        <li id="Topic" class="<?php echo e(request()->is('MngTopic/topics') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('MngTopic/topics')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category MGMT</p>
+                                <p>Topics MGMT</p>
                             </a>
                         </li>
                         <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">

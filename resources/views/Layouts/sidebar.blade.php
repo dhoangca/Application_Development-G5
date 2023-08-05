@@ -60,7 +60,20 @@
                                 <p>Course MGMT</p>
                             </a>
                         </li>
-                        <li id="Category" class="{{ request()->is('category') ? 'active' : '' }}">
+                        <li id="Category"
+                            class="{{ request()->is('MNGCourseCategories/course-categories') ? 'active' : '' }}">
+                            <a href="{{ asset('MNGCourseCategories/course-categories') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Course-Category MGMT</p>
+                            </a>
+                        </li>
+                        <li id="Topic" class="{{ request()->is('MngTopic/topics') ? 'active' : '' }}">
+                            <a href="{{ asset('MngTopic/topics') }}">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>Topics MGMT</p>
+                            </a>
+                        </li>
+                        <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
                             <a href="{{ asset('/category') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>Category MGMT</p>
@@ -71,7 +84,8 @@
 
                     {{-- Training Role Sidebar Menu Items --}}
                     @if (Auth::user()->role === 'training')
-                        <li id="home" class="{{ request()->route()->getName() === 'All.index.training'? 'active': '' }}">
+                        <li id="home"
+                            class="{{ request()->route()->getName() === 'All.index.training'? 'active': '' }}">
                             <a href="{{ route('All.index.training') }}">
                                 <i class="nc-icon nc-bank"></i>
                                 <p>Home</p>
@@ -95,7 +109,8 @@
                                 <p>Course MGMT</p>
                             </a>
                         </li>
-                        <li id="Category" class="{{ request()->is('MNGCourseCategories/course-categories') ? 'active' : '' }}">
+                        <li id="Category"
+                            class="{{ request()->is('MNGCourseCategories/course-categories') ? 'active' : '' }}">
                             <a href="{{ asset('MNGCourseCategories/course-categories') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>Course-Category MGMT</p>
@@ -125,7 +140,7 @@
                                 <p>Home</p>
                             </a>
                         </li>
-                        
+
                         <li id="notifications" class="{{ request()->is('All/notifications') ? 'active' : '' }}">
                             <a href="{{ asset('All/notifications') }}">
                                 <i class="nc-icon nc-bell-55"></i>
