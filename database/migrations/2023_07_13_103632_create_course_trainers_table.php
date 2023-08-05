@@ -14,9 +14,9 @@ class CreateCourseTrainersTable extends Migration
     public function up()
     {
         Schema::create('course_trainers', function (Blueprint $table) {
-            $table->id('ctId');
-            $table->unsignedBigInteger('courseId');
-            $table->unsignedBigInteger('trainerId');
+            $table->increments('ctId');
+            $table->unsignedInteger('courseId');
+            $table->unsignedInteger('trainerId');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

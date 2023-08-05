@@ -23,4 +23,8 @@ class Course extends Model
         'created_at',
         'updated_at',
     ];
+    public function trainees()
+    {
+        return $this->belongsToMany(Trainee::class, 'trainee_course', 'courseId', 'traineeId');
+    }
 }

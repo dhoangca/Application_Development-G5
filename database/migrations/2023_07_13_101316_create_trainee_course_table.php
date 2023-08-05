@@ -15,12 +15,11 @@ class CreateTraineeCourseTable extends Migration
     public function up()
     {
         Schema::create('trainee_course', function (Blueprint $table) {
-            $table->id('tcId');
-            $table->unsignedBigInteger('traineeId');
-            $table->unsignedBigInteger('courseId');
+            $table->increments('tcId');
+            $table->unsignedInteger('traineeId');
+            $table->unsignedInteger('courseId');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-
             $table->foreign('traineeId')->references('traineeId')->on('trainees')->onDelete('cascade');
             $table->foreign('courseId')->references('courseId')->on('courses')->onDelete('cascade');
         });

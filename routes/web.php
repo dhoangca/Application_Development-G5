@@ -13,6 +13,7 @@ use App\Http\Controllers\Manages\CourseCategoryController;
 use App\Http\Controllers\Manages\TopicController;
 use App\Http\Controllers\Manages\TrainerController;
 use App\Http\Controllers\Manages\TopicTrainerController;
+use App\Http\Controllers\Manages\TraineesCoursesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,14 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         Route::get('/assign-trainer-to-topic', [TopicTrainerController::class, 'assignTrainerForm'])->middleware('checkRole:admin,training')->name('assignTrainerForm');
 
         Route::post('/assign-trainer-to-topic', [TopicTrainerController::class, 'assignTrainerToTopic'])->middleware('checkRole:admin,training')->name('assignTrainerToTopic');
+    });
+
+    // route of role Training with function assign trainer to a topic
+    Route::prefix('AssignC')->name('AssignC.')->group(function () {
+
+        Route::get('/assign_trainee_to_courses', [TraineesCoursesController::class, 'assignTraineeForm'])->middleware('checkRole:admin,training')->name('assignTraineeForm');
+
+        Route::post('/assign_trainee_to_courses', [TraineesCoursesController::class, 'assignTraineeToCourse'])->middleware('checkRole:admin,training')->name('assignTraineeToCourse');
     });
 
     Route::prefix('Users')->name('Users.')->group(function () {

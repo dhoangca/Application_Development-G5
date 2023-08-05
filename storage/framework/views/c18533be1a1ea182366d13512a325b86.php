@@ -20,7 +20,12 @@
                         <?php if(session('message')): ?>
                             <p><?php echo e(session('message')); ?></p>
                         <?php endif; ?>
+                        <?php if(session('success')): ?>
+                            <div class="alert alert-danger">
+                                <?php echo e(session('success')); ?>
 
+                            </div>
+                        <?php endif; ?>
                         <form method="post" action="<?php echo e(route('Assign.assignTrainerToTopic')); ?>">
                             <?php echo csrf_field(); ?>
                             <div class="row">
@@ -39,7 +44,8 @@
                                         <label>Select a Trainer:</label>
                                         <select class="form-control" name="trainerId" id="trainerId">
                                             <?php $__currentLoopData = $trainers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trainer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($trainer->trainerId); ?>"><?php echo e($trainer->name); ?></option>
+                                                <option value="<?php echo e($trainer->trainerId); ?>">
+                                                    <?php echo e($trainer->fname); ?><?php echo e($trainer->lname); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>

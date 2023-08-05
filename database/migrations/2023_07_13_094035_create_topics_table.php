@@ -14,10 +14,10 @@ class CreateTopicsTable extends Migration
     public function up()
     {
         Schema::create('topics', function (Blueprint $table) {
-            $table->id('topicId');
+            $table->increments('topicId');
             $table->string('name');
             $table->string('description');
-            $table->unsignedBigInteger('courseId');
+            $table->unsignedInteger('courseId');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

@@ -26,13 +26,14 @@ class TopicTrainerController extends Controller
 
         $topic = TopicModel::find($request->topicId);
         $trainer = TrainerModel::find($request->trainerId);
+        // dd ($topic, $trainer );
 
         if ($topic && $trainer) {
-            $topic->trainers()->sync([$trainer->trainerId]);
-            return response()->json(['message' => 'Trainer assigned to topic successfully'], 200);
-        }else
-        {
-            return response()->json(['message' => 'Topic or Trainer not found'], 404);
+            $topic->trainers()->attach([$trainer->trainerId]);
+            // $trainer->topics()->attach([$topic->topicId]);
+            return redirect()->route('Assign.assignTrainerForm')->with('success', 'Trainer assigned to topic successfully.');
+        } else {
+            return redirect()->route('Assign.assignTrainerForm')->with('success', 'Topic or Trainer not found.');
         }
     }
 }
