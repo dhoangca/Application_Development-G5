@@ -167,3 +167,25 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         Route::delete('/topics/{topic}', [TopicController::class, 'destroy'])->middleware('checkRole:admin,training')->name('topics.destroy');
     });
 });
+
+
+
+Route::prefix('managetrainer')->name('managetrainer.')->group(function () {
+    // For displaying the create form
+    Route::get('/trainers/create', [TrainerController::class, 'create'])->name('trainers.create');
+
+    // For storing the created trainer
+    Route::post('/trainers', [TrainerController::class, 'store'])->name('trainers.store');
+
+    // For displaying the edit form
+    Route::get('/trainers/{trainer}', [TrainerController::class, 'edit'])->name('trainers.edit');
+
+    // For updating the trainer
+    Route::put('/trainers/{trainerId}', [TrainerController::class, 'update'])->name('trainers.update');
+
+    // For displaying the index page
+    Route::get('/trainers', [TrainerController::class, 'index'])->name('trainers.index');
+
+    // For deleting the trainer
+    Route::delete('/trainers/{trainer}', [TrainerController::class, 'destroy'])->name('trainers.destroy');
+});

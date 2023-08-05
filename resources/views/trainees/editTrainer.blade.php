@@ -6,55 +6,91 @@
 
 <div class="content">
     <!-- Your edit trainee form here -->
-    <form action="{{ route('managetrainee.trainees.update', $trainee->traineeId) }}" method="post">
+    <form action="{{ route('managetrainer.trainers.update', $trainer->trainerId) }}" method="post">
         @csrf
         @method('put')
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" class="form-control" value="{{ $trainee->name }}" required>
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname" class="form-control" value="{{ $trainer->fname }}" required>
         </div>
-
+        @if ($errors->has('fname'))
+            <p>{{ $errors->first('fname') }}</p>
+        @endif
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname" class="form-control" value="{{ $trainer->lname }}" required>
+        </div>
+        @if ($errors->has('lname'))
+            <p>{{ $errors->first('lname') }}</p>
+        @endif
         <div class="form-group">
             <label for="age">Age:</label>
-            <input type="number" name="age" id="age" class="form-control" value="{{ $trainee->age }}" required>
+            <input type="number" name="age" id="age" class="form-control" value="{{ $trainer->age }}" required>
         </div>
-
-        <div class="form-group">
-            <label for="date_of_birth">Date of Birth:</label>
-            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ $trainee->date_of_birth }}" required>
+        @if ($errors->has('age'))
+            <p>{{ $errors->first('age') }}</p>
+        @endif
+        <div class="mb-3">
+            <label for="image">Image:</label>
+            <div class="input-group">
+                <label class="input-group-text" for="imageInput"><input type="file" name="image"
+                        id="image"></label>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" class="form-control" value="{{ $trainee->email }}" required>
-        </div>
-
+        @if ($errors->has('image'))
+            <p>{{ $errors->first('image') }}</p>
+        @endif
         <div class="form-group">
             <label for="telephone">Telephone:</label>
-            <input type="tel" name="telephone" id="telephone" class="form-control" value="{{ $trainee->telephone }}" required>
+            <input type="tel" name="telephone" id="telephone" class="form-control" value="{{ $trainer->telephone }}" required>
         </div>
-
+        @if ($errors->has('telephone'))
+            <p>{{ $errors->first('telephone') }}</p>
+        @endif
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" value="{{ $trainer->email }}" required>
+        </div>
+        @if ($errors->has('email'))
+            <p>{{ $errors->first('email') }}</p>
+        @endif
+        <div class="form-group">
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ $trainer->date_of_birth }}" required>
+        </div>
+        @if ($errors->has('date_of_birth'))
+            <p>{{ $errors->first('date_of_birth') }}</p>
+        @endif
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" name="type" id="type" class="form-control" value="{{ $trainer->type }}" required>
+        </div>
+        @if ($errors->has('type'))
+            <p>{{ $errors->first('type') }}</p>
+        @endif
+        <div class="form-group">
+            <label for="working_place">Working Place:</label>
+            <input type="text" name="working_place" id="working_place" class="form-control" value="{{ $trainer->working_place }}" required>
+        </div>
+        @if ($errors->has('working_place'))
+            <p>{{ $errors->first('working_place') }}</p>
+        @endif
         <div class="form-group">
             <label for="address">Address:</label>
-            <input type="text" name="address" id="address" class="form-control" value="{{ $trainee->address }}" required>
+            <input type="text" name="address" id="address" class="form-control" value="{{ $trainer->address }}" required>
         </div>
-
+        @if ($errors->has('address'))
+            <p>{{ $errors->first('address') }}</p>
+        @endif
         <div class="form-group">
-            <label for="education">Education:</label>
-            <input type="text" name="education" id="education" class="form-control" value="{{ $trainee->education }}" required>
+            <label for="about">About:</label>
+            <input type="text" name="about" id="about" class="form-control" value="{{ $trainer->about }}" required>
         </div>
+        @if ($errors->has('about'))
+            <p>{{ $errors->first('about') }}</p>
+        @endif
 
-        <div class="form-group">
-            <label for="toeic_score">TOEIC Score:</label>
-            <input type="text" name="toeic_score" id="toeic_score" class="form-control" value="{{ $trainee->toeic_score }}" required>
-        </div>
-
-        <div class="form-group">
-            <label for="majors">Majors:</label>
-            <input type="text" name="majors" id="majors" class="form-control" value="{{ $trainee->majors }}" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Update Trainee</button>
+        <button type="submit" class="btn btn-primary">Update Trainer</button>
     </form>
 </div>
 

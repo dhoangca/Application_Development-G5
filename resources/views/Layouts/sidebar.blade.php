@@ -122,10 +122,10 @@
                                 <p>Topics MGMT</p>
                             </a>
                         </li>
-                        <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
-                            <a href="{{ asset('/category') }}">
+                        <li id="Trainer" class="{{ request()->is('managetrainer/trainers') ? 'active' : '' }}">
+                            <a href="{{ asset('managetrainer/trainers') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category MGMT</p>
+                                <p>Trainer profile MGMT</p>
                             </a>
                         </li>
                         <li id="assign" class="{{ request()->is('Assign/assign-trainer-to-topic') ? 'active' : '' }}">
@@ -134,6 +134,7 @@
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
+                        
                         {{-- Add more Training-specific sidebar menu items here --}}
                     @endif
 
