@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Manages;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\Course;
-use Illuminate\Http\Request;
 
 class TopicController extends Controller
 {
@@ -65,4 +66,3 @@ class TopicController extends Controller
         return redirect()->route('MngTopic.topics.index')->with('success', 'Topic deleted successfully!');
     }
 }
-
