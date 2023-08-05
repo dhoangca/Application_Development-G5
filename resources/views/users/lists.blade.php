@@ -76,7 +76,7 @@
                             @include('Layouts.pagination', ['paginator' => $pagination])
                         @endif
                         <div class="create-button">
-                            <a href="{{ asset('/users/create') }}" class="btn btn-primary">Create</a>
+                            <a href="{{ asset('/Users/users/create') }}" class="btn btn-primary">Create</a>
                         </div>
                     </div>
                 </div>
