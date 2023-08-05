@@ -9,6 +9,9 @@ use App\Http\Controllers\Manages\TraineeController;
 use App\Http\Controllers\Manages\CoursesController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Display\ProfileMGMTController;
+use App\Http\Controllers\CourseCategoryController;
+use App\Http\Controllers\TopicController;
+use App\Http\Controllers\TrainerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +42,7 @@ Route::prefix('Auth')->name('Auth.')->group(function () {
 
 //bảo mật check status
 Route::middleware(['auth', 'checkUserStatus'])->group(function () {
-    
+
     Route::prefix('All')->name('All.')->group(function () {
         // Route index by role
         Route::group(['prefix' => 'InRole'], function () {
@@ -60,12 +63,12 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
 
     // route of role Trainer
     Route::prefix('Trainer')->name('Trainer.')->group(function () {
-        
+
         Route::get('/ViewProfile', [ProfileMGMTController::class, 'ViewProfile'])->middleware('checkRole:trainer')->name('ViewProfile');
 
         Route::post('/ViewProfile', [ProfileMGMTController::class, 'updateProfile'])->middleware('checkRole:trainer')->name('updateProfile');
 
-        
+
     });
 
     Route::prefix('Users')->name('Users.')->group(function () {
@@ -124,4 +127,25 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         // Route for displaying a list of all trainee accounts
         Route::get('/courses', [CoursesController::class, 'index'])->middleware('checkRole:admin,training')->name('courses.index');
     });
+});
+
+Route::prefix('MNGCourseCategories')->name('MNGCourseCategories.')->group(function () {
+    //course_categories
+    Route::get('/course-categories', [CourseCategoryController::class, 'index'])->name('course-categories.index');
+    Route::get('/course-categories/create', [CourseCategoryController::class, 'create'])->name('course-categories.create');
+    Route::post('/course-categories', [CourseCategoryController::class, 'store'])->name('course-categories.store');
+    Route::get('/course-categories/{category}/edit', [CourseCategoryController::class, 'edit'])->name('course-categories.edit');
+    Route::put('/course-categories/{categoryId}', [CourseCategoryController::class, 'update'])->name('course-categories.update');
+    Route::delete('/course-categories/{category}', [CourseCategoryController::class, 'delete'])->name('course-categories.delete');
+});
+
+Route::prefix('MngTopic')->name('MngTopic.')->group(function () {
+    //topic
+
+    Route::get('/topics', [TopicController::class, 'index'])->name('topics.index');
+    Route::get('/topics/create', [TopicController::class, 'create'])->name('topics.create');
+    Route::post('/topics', [TopicController::class, 'store'])->name('topics.store');
+    Route::get('/topics/{topic}/edit', [TopicController::class, 'edit'])->name('topics.edit');
+    Route::put('/topics/{topicId}', [TopicController::class, 'update'])->name('topics.update');
+    Route::delete('/topics/{topic}', [TopicController::class, 'destroy'])->name('topics.destroy');
 });
