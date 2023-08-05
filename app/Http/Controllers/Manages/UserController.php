@@ -56,7 +56,7 @@ class UserController extends Controller
         $user->role = $validatedData['role'];
         $user->save();
 
-        return redirect()->route('users.index')->with('success', 'User created successfully');
+        return redirect()->route('Users.users.index')->with('success', 'User created successfully');
     }
 
     public function edit(UserModel $user)
@@ -79,7 +79,7 @@ class UserController extends Controller
         $user->role = $validatedData['role'];
         $user->save();
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully');
+        return redirect()->route('Users.users.index')->with('success', 'User updated successfully');
     }
 
     public function delete(UserModel $user)

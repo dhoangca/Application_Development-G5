@@ -28,7 +28,7 @@ class TopicTrainerController extends Controller
         $trainer = TrainerModel::find($request->trainerId);
 
         if ($topic && $trainer) {
-            $topic->trainers()->syncWithoutDetaching([$trainer->trainerId]);
+            $topic->trainers()->sync([$trainer->trainerId]);
             return response()->json(['message' => 'Trainer assigned to topic successfully'], 200);
         }else
         {

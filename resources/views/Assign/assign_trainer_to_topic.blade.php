@@ -39,7 +39,7 @@
                                         <label>Select a Trainer:</label>
                                         <select class="form-control" name="trainerId" id="trainerId">
                                             @foreach ($trainers as $trainer)
-                                                <option value="{{ $trainer->trainerId }}">{{ $trainer->name }}</option>
+                                                <option value="{{ $trainer->trainerId }}">{{ $trainer->fname }}{{ $trainer->lname }}</option>
                                             @endforeach
                                         </select>
                                     </div>

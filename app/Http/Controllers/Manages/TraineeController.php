@@ -36,7 +36,7 @@ class TraineeController extends Controller
 
         Trainee::create($data);
 
-        return redirect()->route('trainees.index')->with('success', 'Trainee account created successfully.');
+        return redirect()->route('managetrainee.trainees.index')->with('success', 'Trainee account created successfully.');
     }
 
     public function edit(Trainee $trainee)
