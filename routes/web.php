@@ -9,9 +9,6 @@ use App\Http\Controllers\Manages\TraineeController;
 use App\Http\Controllers\Manages\CoursesController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Display\ProfileMGMTController;
-use App\Http\Controllers\CourseCategoryController;
-use App\Http\Controllers\TopicController;
-use App\Http\Controllers\TrainerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +66,16 @@ Route::middleware(['auth', 'checkUserStatus'])->group(function () {
         Route::post('/ViewProfile', [ProfileMGMTController::class, 'updateProfile'])->middleware('checkRole:trainer')->name('updateProfile');
 
 
+    });
+
+    // route of role Training with function assign trainer to a topic
+    Route::prefix('Assign')->name('Assign.')->group(function () {
+        
+        Route::get('/assign-trainer-to-topic', [TopicTrainerController::class, 'assignTrainerForm'])->middleware('checkRole:admin,training')->name('assignTrainerForm');
+
+        Route::post('/assign-trainer-to-topic', [TopicTrainerController::class, 'assignTrainerToTopic'])->middleware('checkRole:admin,training')->name('assignTrainerToTopic');
+
+        
     });
 
     Route::prefix('Users')->name('Users.')->group(function () {

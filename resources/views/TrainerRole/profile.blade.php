@@ -138,7 +138,7 @@
                                         <label>User Name</label>
                                         @auth
                                             <input type="text" class="form-control" placeholder="Username"
-                                                value="{{ Auth::user()->username }}" name="username" >
+                                                value="{{ Auth::user()->username }}" name="" readonly>
                                         @endauth
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@
                                         <label>Email address</label>
                                         @auth
                                             <input type="email" class="form-control" placeholder="Email address"
-                                                value="{{ Auth::user()->email }}" name="email">
+                                                value="{{ Auth::user()->email }}" name="" readonly>
                                         @endauth
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                                 <div class="col-md-4 px-1">
                                     <div class="form-group">
                                         <label>Date of Birth</label>
-                                        <input type="text" class="form-control" placeholder="Date of Birth"
+                                        <input type="date" class="form-control" placeholder="Date of Birth"
                                             name="date_of_birth" value="">
                                     </div>
                                 </div>
@@ -193,13 +193,20 @@
                                             name="telephone" value="">
                                     </div>
                                 </div>
-                            </div>
+                            </div>                            
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6 pr-1">
                                     <div class="form-group">
                                         <label>Working position</label>
                                         <input type="text" class="form-control" placeholder="Working position"
                                             name="working_place" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>email</label>
+                                        <input type="email" class="form-control" placeholder="Email"
+                                            name="email" value="">
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +223,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>About Me</label>
-                                        <textarea class="form-control textarea" placeholder="About Me" name="about"></textarea>
+                                        <textarea class="form-control textarea" placeholder="About Me" name="about" value=""></textarea>
                                     </div>
                                 </div>
                             </div>
