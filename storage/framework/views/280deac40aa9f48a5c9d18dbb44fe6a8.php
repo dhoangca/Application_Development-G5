@@ -17,4 +17,6 @@
          demo.initChartsPages();
      });
  </script>
+
+
 <?php /**PATH D:\AD\resources\views/Layouts/js.blade.php ENDPATH**/ ?>

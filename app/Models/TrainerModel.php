@@ -19,13 +19,12 @@ class TrainerModel extends Model
         'age',
         'image',
         'telephone',
+        'email',
         'date_of_birth',
         'type',
         'working_place',
         'address',
         'about',
-        'created_at',
-        'updated_at',
     ];
 
     public function users()

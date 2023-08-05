@@ -14,7 +14,7 @@ class CreateTrainingStaffTable extends Migration
     public function up()
     {
         Schema::create('training_staff', function (Blueprint $table) {
-            $table->id('tsId');
+            $table->increments('tsId');
             $table->string('username');
             $table->string('password');
             $table->string('name');
