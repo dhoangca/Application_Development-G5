@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Manages;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\CourseCategory;
 
 class CoursesController extends Controller
 {
@@ -13,11 +14,12 @@ class CoursesController extends Controller
         $courses = Course::all();
         return view('trainees.indexCourse', compact('courses'));
     }
-
     public function create()
     {
-        return view('trainees.createCourse');
+        $categories = CourseCategory::all();
+        return view('trainees.createCourse', compact('categories'));
     }
+    //
 
     public function store(Request $request)
     {
@@ -32,36 +34,32 @@ class CoursesController extends Controller
         return redirect()->route('manageCourse.courses.index')
             ->with('success', 'Course created successfully.');
     }
-
+    //
+    //
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('trainees.editCourse', compact('course'));
+        $categories = CourseCategory::all();
+        return view('trainees.editCourse', compact('course', 'categories'));
     }
-
-    public function update(Request $request, $courseId)
+    //
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'categoryId' => 'required|exists:course_categories,categoryId',
+        ]);
 
-        $course = Course::find($courseId);
-
-        $course->name = $request->name;
-
-        $course->description = $request->description;
-
-        $course->categoryId = $request->categoryId;
-
-        $course->save();
+        $course = Course::findOrFail($id);
+        $course->update($request->all());
 
         return redirect()->route('manageCourse.courses.index')->with('success', 'Course updated successfully.');
     }
-
-    public function delete($courseId)
+    public function delete($id)
     {
-
-        $course = Course::find($courseId);
-
+        $course = Course::findOrFail($id);
         $course->delete();
-
-        return back();
+        return redirect()->route('manageCourse.courses.index')->with('success', 'Course deleted successfully!');
     }
 }
