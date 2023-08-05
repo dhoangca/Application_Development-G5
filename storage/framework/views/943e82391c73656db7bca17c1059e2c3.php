@@ -73,10 +73,10 @@
                                 <p>Topics MGMT</p>
                             </a>
                         </li>
-                        <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
-                            <a href="<?php echo e(asset('/category')); ?>">
+                        <li id="assign" class="<?php echo e(request()->is('Assign/assign-trainer-to-topic') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('Assign/assign-trainer-to-topic')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category MGMT</p>
+                                <p>assign trainer to topic</p>
                             </a>
                         </li>
                         
