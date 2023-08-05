@@ -37,7 +37,6 @@ class RegisterController extends Controller
         }
 
         $user = new UserModel();
-        // $user->id = $request->input('id');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));

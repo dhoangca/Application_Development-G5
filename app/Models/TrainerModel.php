@@ -19,7 +19,6 @@ class TrainerModel extends Model
         'age',
         'image',
         'telephone',
-        'email',
         'date_of_birth',
         'type',
         'working_place',
@@ -29,4 +28,13 @@ class TrainerModel extends Model
         'updated_at',
     ];
 
+    public function users()
+    {
+        return $this->belongsToMany(UserModel::class, 'user_trainer', 'trainerId', 'id')->withTimestamps();
+    }
+
+    public function topics()
+    {
+        return $this->belongsToMany(TopicModel::class, 'topic_trainers');
+    }
 }

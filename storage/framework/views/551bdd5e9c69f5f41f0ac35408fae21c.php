@@ -41,7 +41,7 @@
                             <tbody>
                                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td><?php echo e($user->id); ?></td>
+                                        <td><?php echo e($user->userId); ?></td>
                                         <td><?php echo e($user->username); ?></td>
                                         <td><?php echo e($user->email); ?></td>
                                         <td><?php echo e($user->status); ?></td>
@@ -50,7 +50,7 @@
                                         <td><?php echo e($user->updated_at); ?></td>
                                         <td>
                                             
-                                            <form action="<?php echo e(route('Users.users.toggleStatus', ['user' => $user->id])); ?>"
+                                            <form action="<?php echo e(route('Users.users.toggleStatus', ['user' => $user->userId])); ?>"
                                                 method="POST" style="display: inline-block;">
                                                 <?php echo csrf_field(); ?>
                                                 <?php echo method_field('PUT'); ?>
@@ -60,7 +60,7 @@
 
                                                 </button>
                                             </form>
-                                            <form action="<?php echo e(route('Users.users.delete', ['user' => $user->id])); ?>"
+                                            <form action="<?php echo e(route('Users.users.delete', ['user' => $user->userId])); ?>"
                                                 method="POST" style="display: inline-block;">
                                                 <?php echo csrf_field(); ?>
                                                 <?php echo method_field('DELETE'); ?>
