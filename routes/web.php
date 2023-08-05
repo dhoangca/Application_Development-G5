@@ -12,6 +12,7 @@ use App\Http\Controllers\Display\ProfileMGMTController;
 use App\Http\Controllers\Manages\CourseCategoryController;
 use App\Http\Controllers\Manages\TopicController;
 use App\Http\Controllers\Manages\TrainerController;
+use App\Http\Controllers\Manages\TopicTrainerController;
 
 /*
 |--------------------------------------------------------------------------

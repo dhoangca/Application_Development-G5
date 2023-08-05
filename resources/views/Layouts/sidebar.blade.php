@@ -73,10 +73,10 @@
                                 <p>Topics MGMT</p>
                             </a>
                         </li>
-                        <li id="categories" class="{{ request()->is('category') ? 'active' : '' }}">
-                            <a href="{{ asset('/category') }}">
+                        <li id="assign" class="{{ request()->is('Assign/assign-trainer-to-topic') ? 'active' : '' }}">
+                            <a href="{{ asset('Assign/assign-trainer-to-topic') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category MGMT</p>
+                                <p>assign trainer to topic</p>
                             </a>
                         </li>
                         {{-- Add more Admin-specific sidebar menu items here --}}
