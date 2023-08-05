@@ -20,7 +20,11 @@
                         @if (session('message'))
                             <p>{{ session('message') }}</p>
                         @endif
-
+                        @if (session('success'))
+                            <div class="alert alert-danger">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <form method="post" action="{{ route('Assign.assignTrainerToTopic') }}">
                             @csrf
                             <div class="row">
@@ -39,7 +43,8 @@
                                         <label>Select a Trainer:</label>
                                         <select class="form-control" name="trainerId" id="trainerId">
                                             @foreach ($trainers as $trainer)
-                                                <option value="{{ $trainer->trainerId }}">{{ $trainer->fname }}{{ $trainer->lname }}</option>
+                                                <option value="{{ $trainer->trainerId }}">
+                                                    {{ $trainer->fname }}{{ $trainer->lname }}</option>
                                             @endforeach
                                         </select>
                                     </div>

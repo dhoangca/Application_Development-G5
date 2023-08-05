@@ -19,6 +19,6 @@ class TopicModel extends Model
     ];
     public function trainers()
     {
-        return $this->belongsToMany(TrainerModel::class, 'topic_trainers', 'trainerId', 'topicId');
+        return $this->belongsToMany(TrainerModel::class, 'topic_trainers', 'topicId', 'trainerId');
     }
 }

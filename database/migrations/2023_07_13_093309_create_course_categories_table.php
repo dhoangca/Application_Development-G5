@@ -15,7 +15,7 @@ class CreateCourseCategoriesTable extends Migration
     public function up()
     {
         Schema::create('course_categories', function (Blueprint $table) {
-            $table->id('categoryId');
+            $table->increments('categoryId');
             $table->string('name');
             $table->string('description')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
