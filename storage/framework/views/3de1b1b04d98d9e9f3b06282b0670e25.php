@@ -9,7 +9,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
                 <th class="text-center">Name</th>
                 <th class="text-center">Description</th>
                 <th class="text-center">Category ID</th>
