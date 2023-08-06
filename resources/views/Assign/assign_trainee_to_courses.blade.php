@@ -32,8 +32,8 @@
                                     <div class="form-group">
                                         <label>Select a courses:</label>
                                         <select class="form-control" name="courseId" id="courseId">
-                                            @foreach ($Courses as $Course)
-                                                <option value="{{ $Course->courseId }}">{{ $Course->name }}</option>
+                                            @foreach ($courses as $course)
+                                                <option value="{{ $course->courseId }}">{{ $course->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -42,9 +42,9 @@
                                     <div class="form-group">
                                         <label>Select a trainee:</label>
                                         <select class="form-control" name="traineeId" id="traineeId">
-                                            @foreach ($Trainees as $Trainee)
-                                                <option value="{{ $Trainee->traineeId }}">
-                                                    {{ $trainer->fname }}{{ $Trainee->lname }}</option>
+                                            @foreach ($trainees as $trainee)
+                                                <option value="{{ $trainee->traineeId }}">
+                                                    {{ $trainee->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
