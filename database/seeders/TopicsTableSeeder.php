@@ -14,12 +14,12 @@ class TopicsTableSeeder extends Seeder
             [
                 'name' => 'Martial Arts',
                 'description' => 'Description for Martial Arts',
-                // Replace with the appropriate courseId from the courses table
+                'courseId' => 1, // Replace with the appropriate courseId from the courses table
             ],
             [
                 'name' => 'Battery PRO',
                 'description' => 'Description for Battery PRO',
-                
+                'courseId' => 2, // Replace with the appropriate courseId from the courses table
             ],
             // Add more topics if needed
         ];
@@ -28,4 +28,5 @@ class TopicsTableSeeder extends Seeder
         DB::table('topics')->insert($topics);
     }
 }
+
 

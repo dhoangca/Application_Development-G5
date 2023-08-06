@@ -18,9 +18,9 @@ class CreateTrainersTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->integer('age');
-            $table->integer('image');
+            $table->string('image');
             $table->string('telephone');
-            $table->string('email');
+            $table->string('email')->nullable(); // Make email field nullable
             $table->date('date_of_birth');
             $table->string('type');
             $table->string('working_place');
