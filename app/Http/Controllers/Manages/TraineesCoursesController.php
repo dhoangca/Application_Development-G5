@@ -14,7 +14,7 @@ class TraineesCoursesController extends Controller
         $trainees = Trainee::all();
         $courses = Course::all();
 
-        return view('Assign.assign_trainee_to_courses', compact('Trainees', 'Courses'));
+        return view('Assign.assign_trainee_to_courses', compact('trainees', 'courses'));
     }
 
     public function assignTraineeToCourse(Request $request)
