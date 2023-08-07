@@ -14,15 +14,15 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h5 class="card-title">Welcome back, Admin</h5>
-            <p class="card-category">Home admin</p>
+            <h5 class="card-title">Welcome back, Training Staff</h5>
+            <p class="card-category">Home Training Staff</p>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="card card-plain">
                   <div class="card-header">
-                    <h5 class="card-title">Sự kiện đáng chú ý</h5>
+                    <h5 class="card-title">Notable events</h5>
                   </div>
                   <div class="card-body">
                     <div class="alert alert-info">
