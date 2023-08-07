@@ -22,7 +22,7 @@
               <div class="col-md-6">
                 <div class="card card-plain">
                   <div class="card-header">
-                    <h5 class="card-title">Sự kiện đáng chú ý</h5>
+                    <h5 class="card-title">Notable events</h5>
                   </div>
                   <div class="card-body">
                     <div class="alert alert-info">

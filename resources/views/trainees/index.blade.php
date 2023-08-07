@@ -70,7 +70,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                    <h4 class="card-title" style="margin-right: 10px;">Topic Management</h4>
+                    <h4 class="card-title" style="margin-right: 10px;">Trainee Management</h4>
                     <div class="search-bar"
                         style="display: flex; align-items: center; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
                         <i class="fas fa-search search-icon" style="margin-right: 5px;"></i>
