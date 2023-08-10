@@ -17,4 +17,6 @@
          demo.initChartsPages();
      });
  </script>
+
+
 <?php /**PATH C:\Users\MINH\OneDrive\Máy tính\Application_Development-G5-CM\resources\views/layouts/js.blade.php ENDPATH**/ ?>

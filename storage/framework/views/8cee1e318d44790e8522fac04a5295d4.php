@@ -16,7 +16,7 @@
             <label for="description">Description:</label>
             <input type="text" name="description" id="description" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Create Trainee</button>
+        <button type="submit" class="btn btn-primary">Create Course Categories</button>
     </form>
 </div>
 
