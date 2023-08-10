@@ -73,13 +73,15 @@
                                 <p>Topics MGMT</p>
                             </a>
                         </li>
+                        
                         <li id="assign" class="<?php echo e(request()->is('Assign/assign-trainer-to-topic') ? 'active' : ''); ?>">
                             <a href="<?php echo e(asset('Assign/assign-trainer-to-topic')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
-                        <li id="assignc" class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
+                        <li id="assignc"
+                            class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
                             <a href="<?php echo e(asset('AssignC/assign_trainee_to_courses')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainee to courses</p>
@@ -128,10 +130,10 @@
                                 <p>Topics MGMT</p>
                             </a>
                         </li>
-                        <li id="categories" class="<?php echo e(request()->is('category') ? 'active' : ''); ?>">
-                            <a href="<?php echo e(asset('/category')); ?>">
+                        <li id="Trainer" class="<?php echo e(request()->is('managetrainer/trainers') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('managetrainer/trainers')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
-                                <p>Category MGMT</p>
+                                <p>Trainer profile MGMT</p>
                             </a>
                         </li>
                         <li id="assign" class="<?php echo e(request()->is('Assign/assign-trainer-to-topic') ? 'active' : ''); ?>">
@@ -140,13 +142,15 @@
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
-                        <li id="assignc" class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
+                        <<<<<<< HEAD=======<li id="assignc"
+                            class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
                             <a href="<?php echo e(asset('AssignC/assign_trainee_to_courses')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainee to courses</p>
                             </a>
-                        </li>
-                        
+                            </li>
+                            >>>>>>> 5d8b0f81be7dd123c33307941eec259aeb4c1b14
+                            
                     <?php endif; ?>
 
                     

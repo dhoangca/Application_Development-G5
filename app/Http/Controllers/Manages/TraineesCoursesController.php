@@ -14,7 +14,7 @@ class TraineesCoursesController extends Controller
         $trainees = Trainee::all();
         $courses = Course::all();
 
-        return view('Assign.assign_trainee_to_courses', compact('Trainees', 'Courses'));
+        return view('Assign.assign_trainee_to_courses', compact('trainees', 'courses'));
     }
 
     public function assignTraineeToCourse(Request $request)
@@ -31,7 +31,7 @@ class TraineesCoursesController extends Controller
         if ($courses && $trainees) {
             $courses->trainees()->attach([$trainees->traineeId]);
             // $trainer->topics()->attach([$topic->topicId]);
-            return redirect()->route('AssignC.assignTraineeForm')->with('success', 'Trainer assigned to topic successfully.');
+            return redirect()->route('AssignC.assignTraineeForm')->with('success', 'Trainee assigned to course successfully.');
         } else {
             return redirect()->route('AssignC.assignTraineeForm')->with('success', 'Topic or Trainer not found.');
         }
