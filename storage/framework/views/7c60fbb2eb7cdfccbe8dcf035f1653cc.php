@@ -73,13 +73,15 @@
                                 <p>Topics MGMT</p>
                             </a>
                         </li>
+                        
                         <li id="assign" class="<?php echo e(request()->is('Assign/assign-trainer-to-topic') ? 'active' : ''); ?>">
                             <a href="<?php echo e(asset('Assign/assign-trainer-to-topic')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
-                        <li id="assignc" class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
+                        <li id="assignc"
+                            class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
                             <a href="<?php echo e(asset('AssignC/assign_trainee_to_courses')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainee to courses</p>
@@ -140,7 +142,16 @@
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
+<<<<<<< HEAD
                         
+=======
+                        <li id="assignc" class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(asset('AssignC/assign_trainee_to_courses')); ?>">
+                                <i class="nc-icon nc-book-bookmark"></i>
+                                <p>assign trainee to courses</p>
+                            </a>
+                        </li>
+>>>>>>> 5d8b0f81be7dd123c33307941eec259aeb4c1b14
                         
                     <?php endif; ?>
 
