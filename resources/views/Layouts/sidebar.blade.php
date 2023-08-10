@@ -147,15 +147,15 @@
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
-                        <li id="assignc"
+                        <<<<<<< HEAD=======<li id="assignc"
                             class="{{ request()->is('AssignC/assign_trainee_to_courses') ? 'active' : '' }}">
                             <a href="{{ asset('AssignC/assign_trainee_to_courses') }}">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainee to courses</p>
                             </a>
-                        </li>
-
-                        {{-- Add more Training-specific sidebar menu items here --}}
+                            </li>
+                            >>>>>>> 5d8b0f81be7dd123c33307941eec259aeb4c1b14
+                            {{-- Add more Training-specific sidebar menu items here --}}
                     @endif
 
                     {{-- Trainer Role Sidebar Menu Items --}}
