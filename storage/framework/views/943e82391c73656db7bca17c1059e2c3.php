@@ -142,15 +142,15 @@
                                 <p>assign trainer to topic</p>
                             </a>
                         </li>
-                        <<<<<<< HEAD=======<li id="assignc"
+                        <li id="assignc"
                             class="<?php echo e(request()->is('AssignC/assign_trainee_to_courses') ? 'active' : ''); ?>">
                             <a href="<?php echo e(asset('AssignC/assign_trainee_to_courses')); ?>">
                                 <i class="nc-icon nc-book-bookmark"></i>
                                 <p>assign trainee to courses</p>
                             </a>
-                            </li>
-                            >>>>>>> 5d8b0f81be7dd123c33307941eec259aeb4c1b14
-                            
+                        </li>
+
+                        
                     <?php endif; ?>
 
                     
